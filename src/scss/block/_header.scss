@@ -1,0 +1,37 @@
+@use 'vars';
+
+.header {
+  padding: 20px;
+  &__container {
+    @include vars.flex-conf(space-between, center)
+  }
+  .nav {
+    @include vars.flex-conf(flex-end, def, 10);
+    max-width: 607px;
+    max-height: 60px;
+    height: 100%;
+    width: 100%;
+  }
+  .menu {
+    @include vars.flex-conf(def, center, 10);
+    &__item {
+      &-link {
+        font-family: vars.$fontWorkSans;
+        font-weight: 600;
+        padding: 12px 20px;
+        border-radius: 20px;
+        &:hover {
+          transition: all .5s;
+          color: vars.$hover-color;
+          background-color: vars.$text-color;
+        }
+      }
+    }
+  }
+  &__link-action {
+    @include vars.btn-conf(152, vars.$call-to-action, def, "user-icon.svg");
+    &:hover {
+      background-color: vars.$hover-color;
+    }
+  }
+}

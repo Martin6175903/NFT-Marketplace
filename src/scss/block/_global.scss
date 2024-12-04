@@ -15,9 +15,8 @@ body {
   height: 100%;
   font-family: vars.$fontMain;
   color: vars.$text-color;
-  line-height: 140%;
-  font-weight: 400;
-  font-size: 16px;
+  @include vars.font-conf(16, 140%, 400);
+  background-color: vars.$background;
 }
 
 .wrapper {
@@ -35,10 +34,6 @@ body {
   margin: 0 auto;
   padding: 0 vars.$containerPadding+px;
 
-  @media (max-width: vars.$breakpoint1150) {
-    max-width: 1150px;
-  }
-
   @media (max-width: vars.$breakpoint992) {
     max-width: 992px;
   }
@@ -54,4 +49,51 @@ body {
   @media (max-width: vars.$breakpoint480) {
     max-width: none;
   }
+}
+
+.header__container {
+  max-width: vars.$containerWidth + 100 + px;
+}
+
+.header__burger {
+  display: none;
+}
+
+.title-level-one {
+  font-weight: 700;
+  font-size: 67px;
+  line-height: 110%;
+  text-transform: capitalize;
+}
+
+.title-level-two {
+  font-weight: 700;
+  font-size: 51px;
+  line-height: 110%;
+  text-transform: capitalize;
+}
+
+.title-level-three {
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 120%;
+  text-transform: capitalize;
+}
+
+.title-level-four {
+  font-weight: 700;
+  font-size: 28px;
+  text-transform: capitalize;
+}
+
+.title-level-five {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 160%;
+  text-transform: capitalize;
+}
+
+.title-level-seven {
+  font-size: 12px;
+  line-height: 110%;
 }

@@ -1,10 +1,9 @@
 // Container & Breakpoints
 
 @use "sass:math";
-$containerWidth: 1400;
-$containerPadding: 40;
+$containerWidth: 1050;
+$containerPadding: 15;
 $containerSidePadding: math.div($containerPadding, 2);
-$breakpoint1150: 1150px;
 $breakpoint992: 992px;
 $breakpoint768: 768px;
 $breakpoint600: 600px;
@@ -15,10 +14,10 @@ $burgerBreakPoint: $breakpoint992;
 $burgerActiveColor: 'white';
 
 // Fonts
-$fontMain: "Space Mono", sans-serif;
-$fontWorkSans: "Work Sans", sans-serif;
-$fontMulish: "Mulish", sans-serif;
-$fontPoppins: "Poppins", sans-serif;
+$fontMain: "Space-Mono-Regular", sans-serif;
+$fontWorkSans: "Work-Sans-Regular", sans-serif;
+$fontMulish: "Mulish-Regular", sans-serif;
+$fontPoppins: "Poppins-Regular", sans-serif;
 
 // Colors
 $background: #2b2b2b;
@@ -28,6 +27,7 @@ $text-color: #ffffff;
 $call-to-action: #a259ff;
 $blue-accent: #377df7;
 $red-accent: #ff7262;
+$hover-color: #753ac3;
 
 
 // Mixins
@@ -45,7 +45,7 @@ $red-accent: #ff7262;
 }
 
 @mixin font-conf($font-size:inherit, $line-height:inherit, $font-weight:400, $letter-spacing:normal) {
-  font-size: $font-size;
+  font-size: $font-size + px;
   line-height: $line-height;
   font-weight: $font-weight;
   @if($letter-spacing != normal) {
@@ -53,19 +53,53 @@ $red-accent: #ff7262;
   }
 }
 
-@mixin flex-conf($justify-content: start, $align-items: start, $gap: 0, $flex-wrap: no-wrap) {
+@mixin flex-conf($justify-content: def, $align-items: def, $gap: def, $flex-wrap: def) {
   display: flex;
-  @if($align-items != start) {
+  @if($align-items != def) {
     align-items: $align-items;
   }
-  @if($justify-content != start) {
+  @if($justify-content != def) {
     justify-content: $justify-content;
   }
-  @if($gap != 0) {
-    gap: $gap;
+  @if($gap != def) {
+    gap: $gap + px;
   }
-  @if($flex-wrap != no-wrap) {
+  @if($flex-wrap != def) {
     flex-wrap: $flex-wrap;
+  }
+}
+
+@mixin btn-conf($max-width: 152, $bg-color: def, $border: def, $icon: def) {
+  font-family: $fontWorkSans;
+  font-weight: 600;
+  padding: 19px 0;
+  border-radius: 20px;
+  width: 100%;
+  max-width: $max-width + px;
+  cursor: pointer;
+  @include flex-conf(center, center);
+  @if ($bg-color != def) {
+    background-color: $bg-color;
+  }
+  @if ($border != def) {
+    border: $border;
+  }
+  &__text {
+    display: block;
+    @if ($icon != def) {
+      padding-left: 32px;
+      position: relative;
+      &:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        @include pos-absolute(left, top, 0, 50%, 0, -50%);
+        background: url("../../img/#{$icon}") center center no-repeat;
+      }
+    }
+  }
+  &:hover {
+    transition: all .2s;
   }
 }
 
