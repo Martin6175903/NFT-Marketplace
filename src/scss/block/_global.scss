@@ -1,0 +1,57 @@
+@use "vars";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: vars.$fontMain;
+  color: vars.$text-color;
+  line-height: 140%;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+// Container
+.container {
+  max-width: (vars.$containerWidth + vars.$containerPadding * 2) + px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 vars.$containerPadding+px;
+
+  @media (max-width: vars.$breakpoint1150) {
+    max-width: 1150px;
+  }
+
+  @media (max-width: vars.$breakpoint992) {
+    max-width: 992px;
+  }
+
+  @media (max-width: vars.$breakpoint768) {
+    max-width: 768px;
+  }
+
+  @media (max-width: vars.$breakpoint600) {
+    max-width: 600px;
+  }
+
+  @media (max-width: vars.$breakpoint480) {
+    max-width: none;
+  }
+}

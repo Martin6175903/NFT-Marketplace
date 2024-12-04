@@ -1,0 +1,71 @@
+// Container & Breakpoints
+
+@use "sass:math";
+$containerWidth: 1400;
+$containerPadding: 40;
+$containerSidePadding: math.div($containerPadding, 2);
+$breakpoint1150: 1150px;
+$breakpoint992: 992px;
+$breakpoint768: 768px;
+$breakpoint600: 600px;
+$breakpoint480: 480px;
+
+// Burger Menu
+$burgerBreakPoint: $breakpoint992;
+$burgerActiveColor: 'white';
+
+// Fonts
+$fontMain: "Space Mono", sans-serif;
+$fontWorkSans: "Work Sans", sans-serif;
+$fontMulish: "Mulish", sans-serif;
+$fontPoppins: "Poppins", sans-serif;
+
+// Colors
+$background: #2b2b2b;
+$background-secondary: #3b3b3b;
+$caption-label-text: #858584;
+$text-color: #ffffff;
+$call-to-action: #a259ff;
+$blue-accent: #377df7;
+$red-accent: #ff7262;
+
+
+// Mixins
+@mixin pos-absolute($vertical-orientation, $horizontal-orientation, $vertical-value, $horizontal-value, $translateX:0, $translateY:0) {
+  position: absolute;
+  #{$vertical-orientation}: $vertical-value;
+  #{$horizontal-orientation}: $horizontal-value;
+  @if($translateX != 0 and $translateY != 0) {
+    transform: translate($translateX, $translateY);
+  } @else if($translateX != 0 and $translateY == 0) {
+    transform: translateX($translateX);
+  } @else if($translateX == 0 and $translateY != 0) {
+    transform: translateY($translateY);
+  }
+}
+
+@mixin font-conf($font-size:inherit, $line-height:inherit, $font-weight:400, $letter-spacing:normal) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  @if($letter-spacing != normal) {
+    letter-spacing: $letter-spacing;
+  }
+}
+
+@mixin flex-conf($justify-content: start, $align-items: start, $gap: 0, $flex-wrap: no-wrap) {
+  display: flex;
+  @if($align-items != start) {
+    align-items: $align-items;
+  }
+  @if($justify-content != start) {
+    justify-content: $justify-content;
+  }
+  @if($gap != 0) {
+    gap: $gap;
+  }
+  @if($flex-wrap != no-wrap) {
+    flex-wrap: $flex-wrap;
+  }
+}
+
