@@ -68,38 +68,3 @@ $hover-color: #753ac3;
     flex-wrap: $flex-wrap;
   }
 }
-
-@mixin btn-conf($max-width: 152, $bg-color: def, $border: def, $icon: def) {
-  font-family: $fontWorkSans;
-  font-weight: 600;
-  padding: 19px 0;
-  border-radius: 20px;
-  width: 100%;
-  max-width: $max-width + px;
-  cursor: pointer;
-  @include flex-conf(center, center);
-  @if ($bg-color != def) {
-    background-color: $bg-color;
-  }
-  @if ($border != def) {
-    border: $border;
-  }
-  &__text {
-    display: block;
-    @if ($icon != def) {
-      padding-left: 32px;
-      position: relative;
-      &:before {
-        content: "";
-        width: 20px;
-        height: 20px;
-        @include pos-absolute(left, top, 0, 50%, 0, -50%);
-        background: url("../../img/#{$icon}") center center no-repeat;
-      }
-    }
-  }
-  &:hover {
-    transition: all .2s;
-  }
-}
-

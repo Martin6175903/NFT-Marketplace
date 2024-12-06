@@ -29,9 +29,11 @@
     }
   }
   &__link-action {
-    @include vars.btn-conf(152, vars.$call-to-action, def, "user-icon.svg");
-    &:hover {
-      background-color: vars.$hover-color;
+    max-width: 152px;
+    &__text {
+      &:before {
+        background: url("../../img/user-icon.svg") center center no-repeat;
+      }
     }
   }
 }

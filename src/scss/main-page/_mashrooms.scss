@@ -1,0 +1,49 @@
+@use "../block/vars";
+
+.mashrooms {
+  max-width: 1280px;
+  height: 640px;
+  margin: 0 auto;
+  background: url("../../img/homepage/mashrooms/mashroom.jpg") center center no-repeat;
+  background-size: cover;
+  &__wrapper {
+    background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+    width: 100%;
+    height: inherit;
+  }
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 640px;
+    padding-bottom: 60px;
+  }
+  &__item {
+    .mashrooms__title {
+      padding: 11px 20px;
+      background-color: vars.$background-secondary;
+      max-width: 151px;
+      border-radius: 20px;
+      text-align: center;
+      .item-name {
+        margin-top: 0;
+        display: block;
+        &:before {
+          background: url("../../img/homepage/mashrooms/mashrooms-icon-avatar.png") center center no-repeat;
+        }
+      }
+    }
+    &-title {
+      margin: 30px 0;
+    }
+    &-link {
+      max-width: 198px;
+      background-color: vars.$text-color;
+      color: vars.$background;
+
+      &__text:before {
+        background: url("../../img/svg-icon-eye.svg") center center no-repeat;
+      }
+    }
+  }
+}

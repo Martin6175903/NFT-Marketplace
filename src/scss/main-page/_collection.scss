@@ -1,0 +1,55 @@
+@use "../block/vars";
+
+.collection {
+  &__items {
+    @include vars.flex-conf(center, def, 30);
+  }
+  &__item {
+    &>*:not(:last-child) {
+      margin-bottom: 15px;
+    }
+    &-box {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      &>* {
+        width: 100px;
+        height: 100px;
+      }
+      &>.collection__box-link {
+        border-radius: 20px;
+        background-color: vars.$call-to-action;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-family: vars.$fontMain;
+        &:hover {
+          transition: all .3s;
+          background-color: vars.$hover-color;
+        }
+      }
+    }
+    &:nth-child(1) {
+      .collection__item-inner {
+        .item-name:before {
+          background: url("../../img/homepage/collection/icon-user-1.png") center center no-repeat;
+        }
+      }
+    }
+    &:nth-child(2) {
+      .collection__item-inner {
+        .item-name:before {
+          background: url("../../img/homepage/collection/icon-user-2.png") center center no-repeat;
+        }
+      }
+    }
+    &:nth-child(3) {
+      .collection__item-inner {
+        .item-name:before {
+          background: url("../../img/homepage/collection/icon-user-3.png") center center no-repeat;
+        }
+      }
+    }
+  }
+}

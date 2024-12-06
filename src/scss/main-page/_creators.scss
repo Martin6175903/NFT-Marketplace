@@ -1,0 +1,52 @@
+@use "../block/vars";
+
+.creators {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    .subtitle {
+      margin-bottom: 0;
+    }
+  }
+  &-link {
+    max-width: 247px;
+    &__text:before {
+      background: url("../../img/homepage/creators/icon-rocket.svg") center center no-repeat;
+    }
+  }
+  &__items {
+    @include vars.flex-conf(center, def, 30, wrap);
+  }
+  &__item {
+    flex-basis: 240px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: vars.$background-secondary;
+    text-align: center;
+    position: relative;
+    max-height: 238px;
+    &-number {
+      position: absolute;
+      left: 20px;
+      top: 18px;
+      padding: 4px 10px;
+      background-color: vars.$background;
+      border-radius: 20px;
+      color: vars.$caption-label-text;
+    }
+    &-username {
+      margin: 10px 0 5px;
+    }
+    &-box {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      &__text {
+        color: vars.$caption-label-text;
+        font-family: vars.$fontWorkSans;
+      }
+    }
+  }
+}

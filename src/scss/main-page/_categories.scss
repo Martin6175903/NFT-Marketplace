@@ -1,0 +1,44 @@
+@use "../block/vars";
+
+.categories {
+  &__title {
+    margin-bottom: 60px;
+  }
+  &__items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  &__item {
+    flex-basis: 240px;
+    display: flex;
+    flex-direction: column;
+    &-name {
+      padding: 20px 30px 25px 30px;
+      height: 76px;
+      border-radius: 0 0 20px 20px;
+      background-color: vars.$background-secondary;
+      font-weight: 600;
+    }
+  }
+  &__inner {
+    position: relative;
+    max-height: 240px;
+  }
+  &__box {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.1);
+    width: 240px;
+    height: 240px;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,75 @@
+@use "../block/vars";
+
+.discover {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    .subtitle {
+      margin-bottom: 0;
+    }
+  }
+  &-link {
+    max-width: 187px;
+    &__text:before {
+      background: url("../../img/svg-icon-eye.svg") center center no-repeat;
+    }
+  }
+  &__items {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+  &__wrapper {
+    max-height: 173px;
+    padding: 20px 30px 25px 30px;
+    border-radius: 0 0 20px 20px;
+    background-color: vars.$background-secondary;
+  }
+  &__item {
+    flex-basis: 330px;
+    display: flex;
+    flex-direction: column;
+    & .item-name {
+      margin: 5px 0 25px;
+    }
+    &:nth-child(1) {
+      .item-name {
+        &:before {
+          background: url("../../img/homepage/discover/discover-icon-avatar-1.png");
+        }
+      }
+    }
+    &:nth-child(2) {
+      .item-name {
+        &:before {
+          background: url("../../img/homepage/discover/discover-icon-avatar-2.png");
+        }
+      }
+    }
+    &:nth-child(3) {
+      .item-name {
+        &:before {
+          background: url("../../img/homepage/discover/discover-icon-avatar-3.png");
+        }
+      }
+    }
+    &-name {
+      font-weight: 600;
+    }
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__item-box {
+    &__text {
+      color: vars.$caption-label-text;
+      margin-bottom: 8px;
+    }
+    &:last-child {
+      text-align: right;
+    }
+  }
+}

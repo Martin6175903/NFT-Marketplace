@@ -51,6 +51,10 @@ body {
   }
 }
 
+section {
+  margin: 160px 0;
+}
+
 .header__container {
   max-width: vars.$containerWidth + 100 + px;
 }
@@ -59,7 +63,12 @@ body {
   display: none;
 }
 
+.subtitle {
+  margin: 10px 0 60px;
+}
+
 .title-level-one {
+  font-family: vars.$fontWorkSans;
   font-weight: 700;
   font-size: 67px;
   line-height: 110%;
@@ -67,6 +76,7 @@ body {
 }
 
 .title-level-two {
+  font-family: vars.$fontWorkSans;
   font-weight: 700;
   font-size: 51px;
   line-height: 110%;
@@ -74,6 +84,7 @@ body {
 }
 
 .title-level-three {
+  font-family: vars.$fontWorkSans;
   font-weight: 700;
   font-size: 38px;
   line-height: 120%;
@@ -83,17 +94,77 @@ body {
 .title-level-four {
   font-weight: 700;
   font-size: 28px;
+  line-height: 140%;
   text-transform: capitalize;
 }
 
 .title-level-five {
-  font-weight: 700;
+  font-family: vars.$fontWorkSans;
+  font-weight: 400;
   font-size: 22px;
   line-height: 160%;
   text-transform: capitalize;
 }
 
+.title-level-six {
+  font-size: 16px;
+  line-height: 140%;
+  font-weight: 400;
+}
+
 .title-level-seven {
   font-size: 12px;
   line-height: 110%;
+}
+
+.item-name {
+  margin-top: 10px;
+  padding-left: 36px;
+  position: relative;
+  &:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.btn {
+  font-family: vars.$fontWorkSans;
+  font-weight: 600;
+  padding: 19px 0;
+  border-radius: 20px;
+  width: 100%;
+  cursor: pointer;
+  @include vars.flex-conf(center, center);
+  &__text {
+    display: block;
+  }
+}
+
+.btn__bg {
+  background-color: vars.$call-to-action;
+  &:hover {
+    transition: all .3s;
+    background-color: vars.$hover-color;
+  }
+}
+
+.btn__bg-none {
+  border: 2px solid vars.$call-to-action;
+}
+
+.btn__icon {
+  .btn__text {
+    position: relative;
+    padding-left: 32px;
+    &:before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      @include vars.pos-absolute(left, top, 0, 50%, 0, -50%);
+    }
+  }
 }
