@@ -2,7 +2,7 @@
 
 .collection {
   &__items {
-    @include vars.flex-conf(center, def, 30);
+    @include vars.flex-conf(center, def, 30, wrap);
   }
   &__item {
     &>*:not(:last-child) {
@@ -49,6 +49,37 @@
         .item-name:before {
           background: url("../../img/homepage/collection/icon-user-3.png") center center no-repeat;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint1100) {
+  .collection {
+    &__item {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .collection {
+    &__item {
+      &-bg {
+        display: block;
+        max-width: 315px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+      &-box>* {
+        width: 80px;
+        height: 80px;
+      }
+      &:nth-child(2) {
+        display: none;
       }
     }
   }

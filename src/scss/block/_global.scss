@@ -33,26 +33,10 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 vars.$containerPadding+px;
-
-  @media (max-width: vars.$breakpoint992) {
-    max-width: 992px;
-  }
-
-  @media (max-width: vars.$breakpoint768) {
-    max-width: 768px;
-  }
-
-  @media (max-width: vars.$breakpoint600) {
-    max-width: 600px;
-  }
-
-  @media (max-width: vars.$breakpoint480) {
-    max-width: none;
-  }
 }
 
 section {
-  margin: 160px 0;
+  padding: 80px 0;
 }
 
 .header__container {
@@ -61,6 +45,109 @@ section {
 
 .header__burger {
   display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  &-item {
+    display: block;
+    height: 3px;
+    position: absolute;
+    transform: translateY(-50%) rotate(0deg);
+    transition: all .3s;
+    background-color: vars.$text-color;
+    &:first-child {
+      top: 10px;
+    }
+    &:last-child {
+      top: 30px;
+    }
+    &:nth-child(odd) {
+      width: 22px;
+    }
+    &:nth-child(even) {
+      width: 30px;
+      top: 20px;
+      transform: translateY(-50%);
+    }
+  }
+  &.burger-open {
+    .header__burger-item {
+      &:nth-child(odd) {
+        top: 15px;
+      }
+      &:nth-child(even) {
+        display: none;
+      }
+      &:first-child {
+        transform: rotate(45deg);
+      }
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$burgerBreakPoint) {
+  .header {
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__burger {
+      display: block;
+    }
+    .logo {
+      display: block;
+    }
+    .nav {
+      display: block;
+      position: absolute;
+      right: -600px;
+      top: -5px;
+      width: 200px;
+      text-align: center;
+      max-height: none;
+      height: auto;
+      padding: 40px 5px 10px;
+      background-color: vars.$background-secondary;
+      border-radius: 20px;
+      transition: all .5s;
+      & .menu__item-link {
+        display: block;
+        border-radius: 0;
+        &:hover {
+          background: inherit;
+          color: inherit;
+        }
+        &:active {
+          background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+        }
+      }
+      & .menu__item {
+        border-top: 1px solid vars.$caption-label-text;
+        &:last-child {
+          border-bottom: 1px solid vars.$caption-label-text;
+        }
+      }
+    }
+    .menu {
+      display: block;
+    }
+    &__link-action {
+      margin-top: 10px;
+      width: 100%;
+      max-width: none;
+      &:hover {
+        background: vars.$call-to-action;
+      }
+      &:active {
+        background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+      }
+    }
+  }
 }
 
 .subtitle {
@@ -85,7 +172,7 @@ section {
 
 .title-level-three {
   font-family: vars.$fontWorkSans;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 38px;
   line-height: 120%;
   text-transform: capitalize;
@@ -148,12 +235,17 @@ section {
   background-color: vars.$call-to-action;
   &:hover {
     transition: all .3s;
-    background-color: vars.$hover-color;
+    background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
   }
 }
 
 .btn__bg-none {
   border: 2px solid vars.$call-to-action;
+  &:hover {
+    transition: all .3s;
+    background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+    color: vars.$hover-color-trans-bg;
+  }
 }
 
 .btn__icon {
@@ -166,5 +258,46 @@ section {
       height: 20px;
       @include vars.pos-absolute(left, top, 0, 50%, 0, -50%);
     }
+  }
+}
+
+
+@media (max-width: vars.$breakpoint1050) {
+  section {
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: vars.$breakpoint768) {
+  .container {
+    &>h3 {
+      font-family: vars.$fontWorkSans;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 140%;
+      text-transform: capitalize;
+    }
+    &>h5 {
+      font-family: vars.$fontWorkSans;
+      font-size: 16px;
+      line-height: 140%;
+      font-weight: 400;
+    }
+    &>div>div>h3 {
+      font-family: vars.$fontWorkSans;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 140%;
+      text-transform: capitalize;
+    }
+    &>div>div>h5 {
+      font-family: vars.$fontWorkSans;
+      font-size: 16px;
+      line-height: 140%;
+      font-weight: 400;
+    }
+  }
+  .subtitle {
+    margin-bottom: 40px;
   }
 }

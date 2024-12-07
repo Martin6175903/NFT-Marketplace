@@ -4,13 +4,17 @@
 $containerWidth: 1050;
 $containerPadding: 15;
 $containerSidePadding: math.div($containerPadding, 2);
+$breakpoint1100: 1100px;
+$breakpoint1050: 1050px;
 $breakpoint992: 992px;
+$breakpoint850: 850px;
 $breakpoint768: 768px;
+$breakpoint650: 650px;
 $breakpoint600: 600px;
 $breakpoint480: 480px;
 
 // Burger Menu
-$burgerBreakPoint: $breakpoint992;
+$burgerBreakPoint: $breakpoint768;
 $burgerActiveColor: 'white';
 
 // Fonts
@@ -28,6 +32,8 @@ $call-to-action: #a259ff;
 $blue-accent: #377df7;
 $red-accent: #ff7262;
 $hover-color: #753ac3;
+$hover-color-trans-bg: #f8a4a4;
+$footer-color: #ccc;
 
 
 // Mixins

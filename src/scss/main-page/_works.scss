@@ -1,0 +1,26 @@
+@use "../block/vars";
+
+.works {
+  margin: 0;
+  padding: 80px 0;
+  &__items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  &__item {
+    flex-basis: 330px;
+    border-radius: 20px;
+    padding: 10px 30px 30px 30px;
+    background-color: vars.$background-secondary;
+    text-align: center;
+    &-title {
+      margin: 20px 0 10px;
+      font-weight: 600;
+      line-height: 140%;
+    }
+    &-subtitle {
+      font-family: vars.$fontWorkSans;
+    }
+  }
+}

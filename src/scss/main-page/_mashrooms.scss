@@ -1,6 +1,7 @@
 @use "../block/vars";
 
 .mashrooms {
+  padding: 0;
   max-width: 1280px;
   height: 640px;
   margin: 0 auto;
@@ -40,10 +41,41 @@
       max-width: 198px;
       background-color: vars.$text-color;
       color: vars.$background;
-
+      &.btn__bg:hover {
+        transition: all .3s;
+        color: vars.$text-color;
+        background: linear-gradient(149deg, #b49dfb 0%, #ff6250 50%, #b49dfb 100%);
+        &:before {
+          background: url("../../img/eye-open.svg") center center no-repeat;
+        }
+      }
       &__text:before {
         background: url("../../img/svg-icon-eye.svg") center center no-repeat;
       }
     }
+    &:last-child {
+      flex-basis: 295px;
+      height: 147px;
+      border-radius: 20px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      background: rgba(59, 59, 59, 0.5);
+    }
+  }
+  &__time {
+    margin: 10px 0 5px;
+    display: flex;
+    gap: 10px;
+    font-family: vars.$fontMain;
+    &>span {
+      font-family: vars.$fontMain;
+    }
+  }
+  &__box {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
   }
 }

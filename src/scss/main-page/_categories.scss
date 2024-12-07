@@ -42,3 +42,31 @@
     justify-content: center;
   }
 }
+
+@media (max-width: vars.$breakpoint768) {
+  .categories {
+    &__items {
+      gap: 20px;
+    }
+    &__item {
+      flex-basis: 150px;
+      &-bg {
+        width: 148px;
+        height: 140px;
+        border-radius: 20px 20px 0 0;
+      }
+      &-name {
+        height: 89px;
+        padding: 20px;
+        font-weight: 600 !important;
+      }
+    }
+    &__inner {
+      max-height: 142px;
+    }
+    &__box {
+      width: 150px;
+      height: 142px;
+    }
+  }
+}

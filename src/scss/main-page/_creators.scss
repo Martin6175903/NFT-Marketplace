@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 10px;
     margin-bottom: 60px;
     .subtitle {
       margin-bottom: 0;
@@ -35,6 +36,7 @@
       background-color: vars.$background;
       border-radius: 20px;
       color: vars.$caption-label-text;
+      z-index: 8;
     }
     &-username {
       margin: 10px 0 5px;
@@ -46,6 +48,81 @@
       &__text {
         color: vars.$caption-label-text;
         font-family: vars.$fontWorkSans;
+      }
+    }
+  }
+  &-link-bottom {
+    display: none;
+  }
+}
+
+@media (max-width: vars.$breakpoint768) {
+  .creators {
+    &__inner {
+      margin-bottom: 40px;
+    }
+    &__item {
+      flex-basis: 330px;
+      &-wrapper {
+        padding-left: 80px;
+      }
+      &-number {
+        top: 12px;
+        left: 5px;
+      }
+      &-avatar {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &-username {
+        text-align: left;
+        margin-top: 0;
+      }
+      &-box {
+        gap: 15px;
+        justify-content: flex-start;
+      }
+    }
+    &__item:nth-child(n + 7) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint600) {
+  .creators {
+    &-link {
+      display: none;
+    }
+    &-link-bottom {
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+      max-width: none;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .creators {
+    &__item {
+      &-wrapper {
+        padding-left: 65px;
+      }
+      &-bg {
+        left: 10px;
+      }
+      &-number {
+        top: 5px;
+        left: 5px;
+      }
+      padding: 10px;
+      &-box {
+        gap: 5px;
       }
     }
   }

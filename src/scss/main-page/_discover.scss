@@ -20,6 +20,7 @@
     display: flex;
     gap: 30px;
     justify-content: center;
+    flex-wrap: wrap;
   }
   &__wrapper {
     max-height: 173px;
@@ -70,6 +71,44 @@
     }
     &:last-child {
       text-align: right;
+    }
+  }
+  &-link-bottom {
+    display: none;
+  }
+}
+
+@media (max-width: vars.$breakpoint768) {
+  .discover {
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: vars.$breakpoint600) {
+  .discover {
+    &-link {
+      display: none;
+    }
+    &-link-bottom {
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+      max-width: none;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .discover {
+    &__item {
+      flex-basis: auto;
+      &-bg {
+        width: 290px;
+        height: 215px;
+      }
+    }
+    &__wrapper {
+      padding: 20px 20px 25px 20px;
     }
   }
 }

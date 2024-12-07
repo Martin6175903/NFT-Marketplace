@@ -1,0 +1,102 @@
+@use "../block/vars";
+
+.footer {
+  padding: 40px 0;
+  background-color: vars.$background-secondary;
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 988px;
+    padding-bottom: 30px;
+  }
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__item {
+    & .title-level-six {
+      font-family: vars.$fontWorkSans;
+      color: vars.$footer-color;
+    }
+    & .title-level-five {
+      font-family: vars.$fontMain;
+      font-weight: 700;
+    }
+    &:nth-child(1) {
+      flex-basis: 327px;
+      &>*:nth-child(2) {
+        margin: 30px 0 20px;
+      }
+      &>*:nth-child(3) {
+        margin-bottom: 15px;
+      }
+      &>*:not(:first-child) {
+        max-width: 238px;
+      }
+    }
+    &:nth-child(2) {
+      flex-basis: 240px;
+      & .title-level-five {
+        margin-bottom: 30px;
+      }
+      & .footer__item-links {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    &:nth-child(3) {
+      flex-basis: 420px;
+      & .title-level-six {
+        margin: 30px 0 20px;
+      }
+
+    }
+  }
+  &__social {
+    display: flex;
+    gap: 10px;
+  }
+  &__form {
+    position: relative;
+    &-email {
+      display: block;
+      width: 100%;
+      border-radius: 20px;
+      padding: 16px 223px 16px 20px;
+      outline: none;
+      height: 60px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 140%;
+      font-family: vars.$fontWorkSans;
+      color: vars.$background;
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+        font-family: vars.$fontWorkSans;
+        color: vars.$background;
+      }
+    }
+    &-btn {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      max-width: 179px;
+      height: 62px;
+      &:hover {
+        transition: all .3s;
+        background: linear-gradient(149deg, #b49dfb 0%, #ff6250 50%, #b49dfb 100%);
+      }
+    }
+  }
+  &__copyright {
+    border-top: 1px solid vars.$caption-label-text;
+    padding-top: 20px;
+    color: vars.$footer-color;
+    font-family: vars.$fontMain;
+  }
+}

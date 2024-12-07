@@ -1,0 +1,60 @@
+@use "../block/vars";
+
+.subscribe {
+  padding: 40px 0 80px;
+  &__inner {
+    padding: 60px;
+    border-radius: 20px;
+    background-color: vars.$background-secondary;
+  }
+  &__items {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    align-items: center;
+  }
+  &__item {
+    &>h5 {
+      margin: 10px 0 40px;
+    }
+  }
+  &__form {
+    position: relative;
+    &-email {
+      display: block;
+      width: 100%;
+      border-radius: 20px;
+      padding: 16px 223px 16px 20px;
+      outline: none;
+      height: 60px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 140%;
+      font-family: vars.$fontWorkSans;
+      color: vars.$background;
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+        font-family: vars.$fontWorkSans;
+        color: vars.$background;
+      }
+    }
+    &-btn {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      max-width: 211px;
+      height: 62px;
+      &:hover {
+        transition: all .3s;
+        background: linear-gradient(149deg, #b49dfb 0%, #ff6250 50%, #b49dfb 100%);
+      }
+      .btn__text:before {
+        background: url("../../img/mail-icon.svg") center center no-repeat;
+      }
+    }
+  }
+}
