@@ -5,6 +5,7 @@
   &__container {
     @include vars.flex-conf(space-between, center);
     position: relative;
+    max-width: vars.$containerWidth + 100 + px;
   }
   .nav {
     @include vars.flex-conf(flex-end, def, 10);
@@ -37,6 +38,51 @@
       }
     }
   }
+  &__burger {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    &-item {
+      display: block;
+      height: 3px;
+      position: absolute;
+      transform: translateY(-50%) rotate(0deg);
+      transition: all .3s;
+      background-color: vars.$text-color;
+      &:first-child {
+        top: 10px;
+      }
+      &:last-child {
+        top: 30px;
+      }
+      &:nth-child(odd) {
+        width: 22px;
+      }
+      &:nth-child(even) {
+        width: 30px;
+        top: 20px;
+        transform: translateY(-50%);
+      }
+    }
+    &.burger-open {
+      .header__burger-item {
+        &:nth-child(odd) {
+          top: 15px;
+        }
+        &:nth-child(even) {
+          display: none;
+        }
+        &:first-child {
+          transform: rotate(45deg);
+        }
+        &:last-child {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: vars.$breakpoint992) {
@@ -59,6 +105,67 @@
   .logo {
     &__img {
       max-width: 200px;
+    }
+  }
+}
+
+@media (max-width: vars.$burgerBreakPoint) {
+  .header {
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__burger {
+      display: block;
+    }
+    .logo {
+      display: block;
+    }
+    .nav {
+      display: block;
+      position: absolute;
+      right: -600px;
+      top: -5px;
+      width: 200px;
+      text-align: center;
+      max-height: none;
+      height: auto;
+      padding: 40px 5px 10px;
+      background-color: vars.$background-secondary;
+      border-radius: 20px;
+      transition: all .5s;
+      & .menu__item-link {
+        display: block;
+        border-radius: 0;
+        &:hover {
+          background: inherit;
+          color: inherit;
+        }
+        &:active {
+          background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+        }
+      }
+      & .menu__item {
+        border-top: 1px solid vars.$caption-label-text;
+        &:last-child {
+          border-bottom: 1px solid vars.$caption-label-text;
+        }
+      }
+    }
+    .menu {
+      display: block;
+    }
+    &__link-action {
+      margin-top: 10px;
+      width: 100%;
+      max-width: none;
+      &:hover {
+        background: vars.$call-to-action;
+      }
+      &:active {
+        background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+      }
     }
   }
 }

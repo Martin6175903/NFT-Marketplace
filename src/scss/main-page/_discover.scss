@@ -2,9 +2,7 @@
 
 .discover {
   &__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    @include vars.flex-conf(space-between, flex-end);
     margin-bottom: 60px;
     .subtitle {
       margin-bottom: 0;
@@ -17,10 +15,7 @@
     }
   }
   &__items {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
+    @include vars.flex-conf(center, def, 30, wrap);
   }
   &__wrapper {
     max-height: 173px;
@@ -100,6 +95,7 @@
 
 @media (max-width: vars.$breakpoint480) {
   .discover {
+    padding-bottom: 60px;
     &__item {
       flex-basis: auto;
       &-bg {

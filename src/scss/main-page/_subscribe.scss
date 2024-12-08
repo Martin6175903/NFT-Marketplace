@@ -12,6 +12,7 @@
     justify-content: center;
     gap: 80px;
     align-items: center;
+    @include vars.flex-conf(center, center, 80);
   }
   &__item {
     &>h5 {
@@ -29,23 +30,17 @@
       height: 60px;
       border: none;
       cursor: pointer;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 140%;
+      @include vars.font-conf(16, 140%);
       font-family: vars.$fontWorkSans;
       color: vars.$background;
       &::placeholder {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 140%;
+        @include vars.font-conf(16, 140%);
         font-family: vars.$fontWorkSans;
         color: vars.$background;
       }
     }
     &-btn {
-      position: absolute;
-      top: -1px;
-      right: -1px;
+      @include vars.pos-absolute(top, right, -1px, -1px);
       max-width: 211px;
       height: 62px;
       &:hover {
@@ -55,6 +50,86 @@
       .btn__text:before {
         background: url("../../img/mail-icon.svg") center center no-repeat;
       }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint1100) {
+  .subscribe {
+    &__inner {
+      padding: 40px 30px;
+    }
+    &__items {
+      gap: 30px;
+    }
+    &__item {
+      &-title {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 140%;
+        @include vars.font-conf(28, 140%, 600);
+        text-transform: capitalize;
+      }
+      &-subtitle {
+        @include vars.font-conf(16, 140%);
+      }
+    }
+    &__form-email {
+      padding-right: 20px;
+    }
+    &__form-btn {
+      margin-top: 16px;
+      position: static;
+      max-width: none;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint850) {
+  .subscribe {
+    &__inner {
+      background-color: inherit;
+    }
+    &__items {
+      flex-direction: column;
+    }
+    &__item {
+      &-img {
+        width: 315px;
+        height: 255px;
+      }
+      &:last-child {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .subscribe {
+    padding-bottom: 40px;
+    &__item-img {
+      max-width: 315px;
+      width: 100%;
+    }
+    &__item:last-child {
+      width: 100%;
+      & h5 {
+        margin-bottom: 20px;
+      }
+    }
+    &__inner {
+      padding: 0;
+    }
+    &__form-email {
+      padding-right: 20px;
+    }
+    &__form-btn {
+      margin-top: 16px;
+      position: static;
+      max-width: none;
+      width: 100%;
     }
   }
 }

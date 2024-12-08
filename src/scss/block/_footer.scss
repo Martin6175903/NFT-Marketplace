@@ -9,9 +9,7 @@
     padding-bottom: 30px;
   }
   &__items {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    @include vars.flex-conf(space-between, flex-start);
   }
   &__item {
     & .title-level-six {
@@ -47,17 +45,22 @@
     }
     &:nth-child(3) {
       flex-basis: 420px;
-      & .title-level-six {
-        margin: 30px 0 20px;
+      &:first-child {
+        margin-bottom: 20px;
       }
-
     }
+  }
+  &__item-link:hover {
+    text-decoration: underline;
+    color: #f8a4a4;
+    transition: all .3s;
   }
   &__social {
     display: flex;
     gap: 10px;
   }
   &__form {
+    margin-top: 20px;
     position: relative;
     &-email {
       display: block;
@@ -68,28 +71,25 @@
       height: 60px;
       border: none;
       cursor: pointer;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 140%;
+      @include vars.font-conf(16, 140%, 400);
       font-family: vars.$fontWorkSans;
       color: vars.$background;
       &::placeholder {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 140%;
+        @include vars.font-conf(16, 140%, 400);
         font-family: vars.$fontWorkSans;
         color: vars.$background;
       }
     }
     &-btn {
-      position: absolute;
-      top: -1px;
-      right: -1px;
+      @include vars.pos-absolute(top, right, -1px, -1px);
       max-width: 179px;
       height: 62px;
       &:hover {
         transition: all .3s;
         background: linear-gradient(149deg, #b49dfb 0%, #ff6250 50%, #b49dfb 100%);
+      }
+      .btn__text:before {
+        background: url("../../img/mail-icon.svg") center center no-repeat;
       }
     }
   }
@@ -97,6 +97,38 @@
     border-top: 1px solid vars.$caption-label-text;
     padding-top: 20px;
     color: vars.$footer-color;
-    font-family: vars.$fontMain;
+    font-family: vars.$fontWorkSans;
+  }
+}
+
+@media (max-width: vars.$breakpoint850) {
+  .footer {
+    &__items {
+      flex-direction: column;
+      gap: 30px;
+    }
+    & &__item {
+      flex-basis: auto;
+      &:first-child>*:nth-child(2) {
+        margin-top: 20px;
+      }
+      &:not(:first-child)>*:first-child {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .footer {
+    &__form-email {
+      padding-right: 20px;
+    }
+    &__form-btn {
+      margin-top: 16px;
+      position: static;
+      max-width: none;
+      width: 100%;
+    }
   }
 }

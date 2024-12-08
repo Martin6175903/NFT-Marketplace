@@ -2,10 +2,7 @@
 
 .creators {
   &__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 10px;
+    @include vars.flex-conf(space-between, flex-end, 10);
     margin-bottom: 60px;
     .subtitle {
       margin-bottom: 0;
@@ -28,10 +25,11 @@
     text-align: center;
     position: relative;
     max-height: 238px;
+    &:nth-child(n + 10) &-number {
+      padding: 4px 5px;
+    }
     &-number {
-      position: absolute;
-      left: 20px;
-      top: 18px;
+      @include vars.pos-absolute(top, left, 18px, 20px);
       padding: 4px 10px;
       background-color: vars.$background;
       border-radius: 20px;
@@ -42,9 +40,7 @@
       margin: 10px 0 5px;
     }
     &-box {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
+      @include vars.flex-conf(center, def, 10);
       &__text {
         color: vars.$caption-label-text;
         font-family: vars.$fontWorkSans;

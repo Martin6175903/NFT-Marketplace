@@ -49,29 +49,21 @@
     &__item {
       &-title {
         font-family: vars.$fontWorkSans;
-        font-weight: 700;
-        font-size: 28px;
-        line-height: 140%;
         text-transform: capitalize;
+        @include vars.font-conf(28, 140%, 700);
       }
       &-subtitle {
         font-family: vars.$fontWorkSans;
-        font-size: 16px;
-        line-height: 140%;
-        font-weight: 400;
+        @include vars.font-conf(16, 140%, 400);
       }
       &-box {
         & h4 {
-          font-weight: 700;
-          font-size: 22px;
-          line-height: 160%;
+          @include vars.font-conf(22, 160%, 700);
           text-transform: capitalize;
         }
         & h5 {
           font-family: vars.$fontWorkSans;
-          font-size: 16px;
-          line-height: 140%;
-          font-weight: 400;
+          @include vars.font-conf(16, 140%, 400);
         }
       }
     }

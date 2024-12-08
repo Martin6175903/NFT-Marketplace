@@ -39,114 +39,9 @@ section {
   padding: 80px 0;
 }
 
-.header__container {
-  max-width: vars.$containerWidth + 100 + px;
-}
-
-.header__burger {
-  display: none;
-  position: relative;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  &-item {
-    display: block;
-    height: 3px;
-    position: absolute;
-    transform: translateY(-50%) rotate(0deg);
-    transition: all .3s;
-    background-color: vars.$text-color;
-    &:first-child {
-      top: 10px;
-    }
-    &:last-child {
-      top: 30px;
-    }
-    &:nth-child(odd) {
-      width: 22px;
-    }
-    &:nth-child(even) {
-      width: 30px;
-      top: 20px;
-      transform: translateY(-50%);
-    }
-  }
-  &.burger-open {
-    .header__burger-item {
-      &:nth-child(odd) {
-        top: 15px;
-      }
-      &:nth-child(even) {
-        display: none;
-      }
-      &:first-child {
-        transform: rotate(45deg);
-      }
-      &:last-child {
-        transform: rotate(-45deg);
-      }
-    }
-  }
-}
-
-@media (max-width: vars.$burgerBreakPoint) {
-  .header {
-    &__container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    &__burger {
-      display: block;
-    }
-    .logo {
-      display: block;
-    }
-    .nav {
-      display: block;
-      position: absolute;
-      right: -600px;
-      top: -5px;
-      width: 200px;
-      text-align: center;
-      max-height: none;
-      height: auto;
-      padding: 40px 5px 10px;
-      background-color: vars.$background-secondary;
-      border-radius: 20px;
-      transition: all .5s;
-      & .menu__item-link {
-        display: block;
-        border-radius: 0;
-        &:hover {
-          background: inherit;
-          color: inherit;
-        }
-        &:active {
-          background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
-        }
-      }
-      & .menu__item {
-        border-top: 1px solid vars.$caption-label-text;
-        &:last-child {
-          border-bottom: 1px solid vars.$caption-label-text;
-        }
-      }
-    }
-    .menu {
-      display: block;
-    }
-    &__link-action {
-      margin-top: 10px;
-      width: 100%;
-      max-width: none;
-      &:hover {
-        background: vars.$call-to-action;
-      }
-      &:active {
-        background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
-      }
-    }
+@media (max-width: vars.$breakpoint1050) {
+  section {
+    padding: 40px 0;
   }
 }
 
@@ -156,40 +51,30 @@ section {
 
 .title-level-one {
   font-family: vars.$fontWorkSans;
-  font-weight: 700;
-  font-size: 67px;
-  line-height: 110%;
+  @include vars.font-conf(67, 110%, 700);
   text-transform: capitalize;
 }
 
 .title-level-two {
   font-family: vars.$fontWorkSans;
-  font-weight: 700;
-  font-size: 51px;
-  line-height: 110%;
+  @include vars.font-conf(51, 110%, 700);
   text-transform: capitalize;
 }
 
 .title-level-three {
   font-family: vars.$fontWorkSans;
-  font-weight: 600;
-  font-size: 38px;
-  line-height: 120%;
+  @include vars.font-conf(38, 120%, 600);
   text-transform: capitalize;
 }
 
 .title-level-four {
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 140%;
+  @include vars.font-conf(28, 140%, 700);
   text-transform: capitalize;
 }
 
 .title-level-five {
   font-family: vars.$fontWorkSans;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 160%;
+  @include vars.font-conf(22, 160%);
   text-transform: capitalize;
 }
 
@@ -197,11 +82,13 @@ section {
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
+  @include vars.font-conf(16, 140%);
 }
 
 .title-level-seven {
   font-size: 12px;
   line-height: 110%;
+  @include vars.font-conf(12, 110%);
 }
 
 .item-name {
@@ -209,10 +96,8 @@ section {
   padding-left: 36px;
   position: relative;
   &:before {
-    position: absolute;
+    @include vars.pos-absolute(top, left, 0, 0);
     content: "";
-    left: 0;
-    top: 0;
     width: 24px;
     height: 24px;
   }
@@ -261,40 +146,25 @@ section {
   }
 }
 
-
-@media (max-width: vars.$breakpoint1050) {
-  section {
-    padding: 40px 0;
-  }
-}
-
 @media (max-width: vars.$breakpoint768) {
   .container {
     &>h3 {
       font-family: vars.$fontWorkSans;
-      font-weight: 700;
-      font-size: 28px;
-      line-height: 140%;
+      @include vars.font-conf(28, 140%, 700);
       text-transform: capitalize;
     }
     &>h5 {
       font-family: vars.$fontWorkSans;
-      font-size: 16px;
-      line-height: 140%;
-      font-weight: 400;
+      @include vars.font-conf(16, 140%, 400);
     }
     &>div>div>h3 {
       font-family: vars.$fontWorkSans;
-      font-weight: 700;
-      font-size: 28px;
-      line-height: 140%;
+      @include vars.font-conf(28, 140%, 700);
       text-transform: capitalize;
     }
     &>div>div>h5 {
       font-family: vars.$fontWorkSans;
-      font-size: 16px;
-      line-height: 140%;
-      font-weight: 400;
+      @include vars.font-conf(16, 140%, 400);
     }
   }
   .subtitle {

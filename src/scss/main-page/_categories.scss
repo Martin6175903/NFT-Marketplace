@@ -5,11 +5,7 @@
     margin-bottom: 60px;
   }
   &__items {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    @include vars.flex-conf(center, flex-start, 30, wrap);
   }
   &__item {
     flex-basis: 240px;
@@ -37,9 +33,7 @@
     width: 240px;
     height: 240px;
     border-radius: 20px 20px 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include vars.flex-conf(center, center);
   }
 }
 

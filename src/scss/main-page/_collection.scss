@@ -9,9 +9,7 @@
       margin-bottom: 15px;
     }
     &-box {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
+      @include vars.flex-conf(center, def, 15);
       &>* {
         width: 100px;
         height: 100px;
@@ -19,9 +17,7 @@
       &>.collection__box-link {
         border-radius: 20px;
         background-color: vars.$call-to-action;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include vars.flex-conf(center, center);
         font-weight: 700;
         font-family: vars.$fontMain;
         &:hover {

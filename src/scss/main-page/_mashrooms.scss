@@ -13,11 +13,12 @@
     height: inherit;
   }
   &__items {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    @include vars.flex-conf(space-between, flex-end, 15);
     height: 640px;
     padding-bottom: 60px;
+    &>.mashrooms__item-link {
+      display: none;
+    }
   }
   &__item {
     .mashrooms__title {
@@ -45,15 +46,12 @@
         transition: all .3s;
         color: vars.$text-color;
         background: linear-gradient(149deg, #b49dfb 0%, #ff6250 50%, #b49dfb 100%);
-        &:before {
-          background: url("../../img/eye-open.svg") center center no-repeat;
-        }
       }
       &__text:before {
         background: url("../../img/svg-icon-eye.svg") center center no-repeat;
       }
     }
-    &:last-child {
+    &:nth-child(2) {
       flex-basis: 295px;
       height: 147px;
       border-radius: 20px;
@@ -73,9 +71,69 @@
   }
   &__box {
     padding-top: 5px;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 5px;
+    @include vars.flex-conf(def, center, 5);
+  }
+
+}
+
+@media (max-width: vars.$breakpoint768) {
+  .mashrooms {
+    &__items {
+      max-width: 670px;
+      margin: 0 auto;
+    }
+    &__item {
+      &-title {
+        font-family: vars.$fontWorkSans;
+        @include vars.font-conf(38, 120%, 600);
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint600) {
+  .mashrooms {
+    &__items {
+      gap: 30px;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 0 15px 40px 15px;
+      &>.mashrooms__item-link {
+        display: flex;
+      }
+    }
+    &__item {
+      &-title {
+        margin-bottom: 0;
+      }
+      &:nth-child(1) {
+        .mashrooms__item-link {
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        flex-basis: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .mashrooms {
+    &__items {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    &__item:nth-child(2) {
+      padding: 15px;
+      height: auto;
+    }
+    &__items>.mashrooms__item-link {
+      width: 100%;
+      max-width: none;
+    }
   }
 }

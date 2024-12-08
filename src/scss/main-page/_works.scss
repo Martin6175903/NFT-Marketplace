@@ -4,9 +4,7 @@
   margin: 0;
   padding: 80px 0;
   &__items {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+    @include vars.flex-conf(center, def, 30, wrap);
   }
   &__item {
     flex-basis: 330px;
@@ -21,6 +19,47 @@
     }
     &-subtitle {
       font-family: vars.$fontWorkSans;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint768) {
+  .works {
+    &__item {
+      flex-basis: 210px;
+      padding: 10px 20px 30px 20px;
+      &-img {
+        width: 134px;
+      }
+      &-title {
+        font-family: vars.$fontWorkSans;
+        @include vars.font-conf(16, 140%, 600);
+      }
+      &-subtitle {
+        @include vars.font-conf(12, 140%);
+        font-family: vars.$fontWorkSans;
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint650) {
+  .works {
+    padding: 40px 0;
+    &__items {
+      flex-direction: column;
+    }
+    &__item {
+      flex-basis: auto;
+      padding: 10px;
+      @include vars.flex-conf(center, center, 10);
+      text-align: left;
+      &-img {
+        width: 84px;
+      }
+      &-title {
+        margin-top: 0;
+      }
     }
   }
 }
