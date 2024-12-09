@@ -1,4 +1,4 @@
-@use "../block/vars";
+@use "../../block/vars";
 
 .creators {
   &__inner {
@@ -11,7 +11,7 @@
   &-link {
     max-width: 247px;
     &__text:before {
-      background: url("../../img/homepage/creators/icon-rocket.svg") center center no-repeat;
+      background: url("../../../img/homepage/creators/icon-rocket.svg") center center no-repeat;
     }
   }
   &__items {
@@ -106,6 +106,7 @@
 @media (max-width: vars.$breakpoint480) {
   .creators {
     &__item {
+      padding: 10px;
       &-wrapper {
         padding-left: 65px;
       }
@@ -116,7 +117,6 @@
         top: 5px;
         left: 5px;
       }
-      padding: 10px;
       &-box {
         gap: 5px;
       }

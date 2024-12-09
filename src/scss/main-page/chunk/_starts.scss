@@ -1,4 +1,4 @@
-@use "../block/vars";
+@use "../../block/vars";
 
 .starts {
   &__items {
@@ -13,7 +13,7 @@
       max-width: 224px;
       &__text {
         &:before {
-          background: url("../../img/homepage/starts/icon-rocket.svg");
+          background: url("../../../img/homepage/starts/icon-rocket.svg");
         }
       }
     }
@@ -35,7 +35,7 @@
       background-color: vars.$background-secondary;
     }
     .item-name:before {
-      background: url("../../img/homepage/starts/user-avatar.png") center center no-repeat;
+      background: url("../../../img/homepage/starts/user-avatar.png") center center no-repeat;
     }
     &:last-child {
       display: flex;

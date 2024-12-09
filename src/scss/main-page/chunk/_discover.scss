@@ -1,4 +1,4 @@
-@use "../block/vars";
+@use "../../block/vars";
 
 .discover {
   &__inner {
@@ -11,7 +11,7 @@
   &-link {
     max-width: 187px;
     &__text:before {
-      background: url("../../img/svg-icon-eye.svg") center center no-repeat;
+      background: url("../../../img/svg-icon-eye.svg") center center no-repeat;
     }
   }
   &__items {
@@ -33,21 +33,21 @@
     &:nth-child(1) {
       .item-name {
         &:before {
-          background: url("../../img/homepage/discover/discover-icon-avatar-1.png");
+          background: url("../../../img/homepage/discover/discover-icon-avatar-1.png");
         }
       }
     }
     &:nth-child(2) {
       .item-name {
         &:before {
-          background: url("../../img/homepage/discover/discover-icon-avatar-2.png");
+          background: url("../../../img/homepage/discover/discover-icon-avatar-2.png");
         }
       }
     }
     &:nth-child(3) {
       .item-name {
         &:before {
-          background: url("../../img/homepage/discover/discover-icon-avatar-3.png");
+          background: url("../../../img/homepage/discover/discover-icon-avatar-3.png");
         }
       }
     }

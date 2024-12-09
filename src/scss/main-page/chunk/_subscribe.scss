@@ -1,4 +1,4 @@
-@use "../block/vars";
+@use "../../block/vars";
 
 .subscribe {
   padding: 40px 0 80px;
@@ -8,10 +8,6 @@
     background-color: vars.$background-secondary;
   }
   &__items {
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-    align-items: center;
     @include vars.flex-conf(center, center, 80);
   }
   &__item {
@@ -48,7 +44,7 @@
         background: linear-gradient(149deg, #b49dfb 0%, #ff6250 50%, #b49dfb 100%);
       }
       .btn__text:before {
-        background: url("../../img/mail-icon.svg") center center no-repeat;
+        background: url("../../../img/mail-icon.svg") center center no-repeat;
       }
     }
   }
@@ -64,9 +60,6 @@
     }
     &__item {
       &-title {
-        font-weight: 600;
-        font-size: 28px;
-        line-height: 140%;
         @include vars.font-conf(28, 140%, 600);
         text-transform: capitalize;
       }

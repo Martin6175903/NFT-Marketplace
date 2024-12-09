@@ -1,4 +1,4 @@
-@use "../block/vars";
+@use "../../block/vars";
 
 .collection {
   &__items {
@@ -29,21 +29,21 @@
     &:nth-child(1) {
       .collection__item-inner {
         .item-name:before {
-          background: url("../../img/homepage/collection/icon-user-1.png") center center no-repeat;
+          background: url("../../../img/homepage/collection/icon-user-1.png") center center no-repeat;
         }
       }
     }
     &:nth-child(2) {
       .collection__item-inner {
         .item-name:before {
-          background: url("../../img/homepage/collection/icon-user-2.png") center center no-repeat;
+          background: url("../../../img/homepage/collection/icon-user-2.png") center center no-repeat;
         }
       }
     }
     &:nth-child(3) {
       .collection__item-inner {
         .item-name:before {
-          background: url("../../img/homepage/collection/icon-user-3.png") center center no-repeat;
+          background: url("../../../img/homepage/collection/icon-user-3.png") center center no-repeat;
         }
       }
     }
