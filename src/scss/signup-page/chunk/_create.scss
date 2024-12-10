@@ -4,6 +4,7 @@
   &__container {
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0 15px;
   }
   &__items {
     @include vars.flex-conf(center, center, 60);
@@ -18,6 +19,7 @@
     &-subtitle {
       margin: 20px 0 40px;
       max-width: 460px;
+      font-family: vars.$fontWorkSans;
     }
   }
   &__form {
@@ -25,6 +27,7 @@
     .form__label {
       position: relative;
       display: block;
+      transition: all .3s;
       &:before {
         @include vars.pos-absolute(top, left, 50%, 20px, 0, -50%);
         content: "";
@@ -43,12 +46,20 @@
       border-radius: 20px;
       border: 1px solid vars.$caption-label-text;
       width: 100%;
+      @include vars.font-conf(16, 140%, 400);
+      font-family: vars.$fontWorkSans;
+      color: vars.$background;
+      cursor: pointer;
       &::placeholder {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 140%;
+        @include vars.font-conf(16, 140%, 400);
         font-family: vars.$fontWorkSans;
         color: vars.$background;
+      }
+      &:focus-visible {
+        transition: all .3s;
+        border: 1px solid green;
+        background-color: #aae3aa;
+        outline: none;
       }
     }
     &>* {
@@ -74,11 +85,110 @@
       border-radius: 20px;
       cursor: pointer;
       font-family: vars.$fontWorkSans;
+      &:hover {
+        transition: all .3s;
+        background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+      }
     }
   }
   .form__btn-disclosure {
-    @include vars.pos-absolute(top, right, 50%, -40px, 0, -50%);
+    @include vars.pos-absolute(top, right, 50%, -35px, 0, -50%);
     cursor: pointer;
     height: 32px;
+  }
+  .form__label.field--success, .form__label.field--failed {
+    &:after {
+      @include vars.pos-absolute(top, right, 50%, 20px, 0, -50%);
+      font-size: 20px;
+    }
+  }
+  .form__label.field--success {
+    &:after {
+      content: "\2714";
+      color: green;
+    }
+  }
+  .form__label.field--failed {
+    &:after {
+      content: "\2716";
+      color: red;
+    }
+  }
+  .form__label.field--success input {
+    border: 1px solid green;
+    background-color: #aae3aa;
+  }
+  .form__label.field--failed input {
+    border: 1px solid red;
+    background-color: #d58585;
+  }
+  .form__psw--failed {
+    font-size: 14px;
+    margin-top: 15px;
+    padding: 12px 0;
+    border-radius: 20px;
+    background-color: red;
+    color: vars.$text-color;
+    font-family: vars.$fontWorkSans;
+    text-align: center;
+  }
+}
+
+@media (max-width: vars.$breakpoint1100) {
+  .create {
+    &__item-bg {
+      width: 397px;
+      height: 615px;
+    }
+    &__item-title {
+      @include vars.font-conf(38, 120%, 600);
+    }
+    &__item-subtitle {
+      @include vars.font-conf(16, 140%);
+    }
+    &__items {
+      gap: 20px;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint850) {
+  .create {
+    &__items {
+      flex-wrap: wrap;
+    }
+    &__item {
+      &-bg {
+        width: auto;
+        height: auto;
+      }
+      &:last-child {
+        padding: 30px 0 40px;
+      }
+      &-subtitle {
+        max-width: none;
+      }
+    }
+    &__form {
+      max-width: none;
+      width: 85%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .create {
+    &__form {
+      width: 90%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    &__item-title {
+      font-size: 28px;
+    }
+    &__item-subtitle {
+      font-size: 14px;
+    }
   }
 }

@@ -74,7 +74,6 @@
     flex-direction: column;
     @include vars.flex-conf(def, center, 5);
   }
-
 }
 
 @media (max-width: vars.$breakpoint768) {
