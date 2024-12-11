@@ -35,6 +35,12 @@ $hover-color: #753ac3;
 $hover-color-trans-bg: #f8a4a4;
 $footer-color: #ccc;
 
+// Validation Form
+$success-border-color: green;
+$success-bg-color: #aae3aa;
+$failed-border-color: red;
+$failed-bg-color: #d58585;
+
 
 // Mixins
 @mixin pos-absolute($vertical-orientation, $horizontal-orientation, $vertical-value, $horizontal-value, $translateX:0, $translateY:0) {

@@ -12,9 +12,9 @@ global.$ = {
 }
 
 // Tasks
-const {index: html, signupHTML } = require("./task/html");
-const {index: scss, signupSCSS } = require("./task/scss");
-const {index: js, signupJS } = require("./task/js");
+const {index: html, signupHTML, walletHTML, artistHTML } = require("./task/html");
+const {index: scss, signupSCSS, walletSCSS, artistSCSS } = require("./task/scss");
+const {index: js, signupJS, walletJS, artistJS } = require("./task/js");
 const fonts = require("./task/fonts");
 const img = require("./task/img");
 const server = require("./task/server");
@@ -27,6 +27,12 @@ const watcher = () => {
     $.gulp.watch($.pathFile.html.signup.watch, signupHTML).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.scss.signup.watch, signupSCSS).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.js.signup.watch, signupJS).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.html.wallet.watch, walletHTML).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.scss.wallet.watch, walletSCSS).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.js.wallet.watch, walletJS).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.html.artist.watch, artistHTML).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.scss.artist.watch, artistSCSS).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.js.artist.watch, artistJS).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.img.watch, img).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.fonts.watch, fonts).on("all", $.browserSync.reload);
 }
@@ -34,7 +40,7 @@ const watcher = () => {
 // Build
 const build = $.gulp.series(
     clear,
-    $.gulp.parallel(html, signupHTML, scss, signupSCSS, js, signupJS, img, fonts)
+    $.gulp.parallel(html, signupHTML, walletHTML, artistHTML, scss, signupSCSS, artistSCSS, walletSCSS, js, signupJS, walletJS, artistJS, img, fonts)
 );
 
 // Dev

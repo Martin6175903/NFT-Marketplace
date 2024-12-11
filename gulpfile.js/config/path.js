@@ -17,6 +17,16 @@ module.exports = {
             src: pathSrc + "/html/signup-page/*.html",
             watch: pathSrc + "/html/signup-page/**/*.html",
             dest: pathDest + "/html"
+        },
+        wallet: {
+            src: pathSrc + "/html/wallet-page/*.html",
+            watch: pathSrc + "/html/wallet-page/**/*.html",
+            dest: pathDest + "/html"
+        },
+        artist: {
+            src: pathSrc + "/html/artist-page/*.html",
+            watch: pathSrc + "/html/artist-page/**/*.html",
+            dest: pathDest + "/html"
         }
     },
 
@@ -39,6 +49,16 @@ module.exports = {
             src: pathSrc + "/scss/signup-page/*.{sass,scss}",
             watch: pathSrc + "/scss/signup-page/**/*.{sass,scss}",
             dest: pathDest + "/css"
+        },
+        wallet: {
+            src: pathSrc + "/scss/wallet-page/*.{sass,scss}",
+            watch: pathSrc + "/scss/wallet-page/**/*.{sass,scss}",
+            dest: pathDest + "/css"
+        },
+        artist: {
+            src: pathSrc + "/scss/artist-page/*.{sass,scss}",
+            watch: pathSrc + "/scss/artist-page/**/*.{sass,scss}",
+            dest: pathDest + "/css"
         }
     },
 
@@ -51,6 +71,16 @@ module.exports = {
         signup: {
             src: pathSrc + "/js/signup-page/*.js",
             watch: pathSrc + "/js/signup-page/**/*.js",
+            dest: pathDest + "/js"
+        },
+        wallet: {
+            src: pathSrc + "/js/wallet-page/*.js",
+            watch: pathSrc + "/js/wallet-page/**/*.js",
+            dest: pathDest + "/js"
+        },
+        artist: {
+            src: pathSrc + "/js/artist-page/*.js",
+            watch: pathSrc + "/js/artist-page/**/*.js",
             dest: pathDest + "/js"
         }
     },

@@ -1,0 +1,99 @@
+@use "../../block/vars";
+
+.wallet {
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  &__items {
+    @include vars.flex-conf(center, center, 60);
+  }
+  &__item {
+    max-width: 610px;
+    width: 100%;
+    &:first-child {
+      line-height: 0;
+    }
+    &-title {
+      font-weight: 600;
+    }
+    &-subtitle {
+      margin: 20px 0 40px;
+      max-width: 460px;
+      font-family: vars.$fontWorkSans;
+    }
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    &-btn {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding: 16px 20px 16px 40px;
+      background-color: vars.$background-secondary;
+      border-radius: 20px;
+      border: 1px solid vars.$call-to-action;
+      max-width: 320px;
+      width: 100%;
+      cursor: pointer;
+      & .title-level-five {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint1100) {
+  .wallet {
+    &__item-title {
+      @include vars.font-conf(38, 120%, 600);
+    }
+    &__item-subtitle {
+      @include vars.font-conf(16, 140%);
+    }
+    &__items {
+      gap: 20px;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint768) {
+  .wallet {
+    &__items {
+      flex-wrap: wrap;
+    }
+    &__item {
+      max-width: none;
+      width: auto;
+      &-bg {
+        width: auto;
+        height: auto;
+      }
+      &:last-child {
+        padding: 30px 0 40px;
+      }
+      &-subtitle {
+        max-width: 325px;
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .wallet {
+    &__item-title {
+      font-size: 28px;
+    }
+    &__item-subtitle {
+      font-size: 14px;
+    }
+    &__box-btn {
+      padding: 16px 10px;
+      justify-content: center;
+    }
+  }
+}
