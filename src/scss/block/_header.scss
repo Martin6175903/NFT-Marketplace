@@ -2,6 +2,9 @@
 
 .header {
   padding: 20px 0;
+  &__inner {
+    text-align: center;
+  }
   &__container {
     @include vars.flex-conf(space-between, center);
     position: relative;
@@ -91,7 +94,6 @@
       display: block;
     }
     .logo {
-      display: block;
       text-align: center;
     }
     .nav {
@@ -117,9 +119,6 @@
       align-items: center;
     }
     &__burger {
-      display: block;
-    }
-    .logo {
       display: block;
     }
     .nav {

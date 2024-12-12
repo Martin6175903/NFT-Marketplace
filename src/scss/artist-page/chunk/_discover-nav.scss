@@ -1,0 +1,76 @@
+@use "../../block/vars";
+
+.discover__nav {
+  padding: 0;
+  margin-top: 10px;
+  &-btns {
+    display: grid;
+    grid-template: 60px / repeat(3, 1fr);
+  }
+  &-btn {
+    cursor: pointer;
+    position: relative;
+    &:before {
+      content: "";
+      width: 100%;
+      height: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: all .3s;
+      background-color: vars.$background-secondary;
+      border-radius: 20px 20px 0 0;
+    }
+    &:hover {
+      &:before {
+        height: 100%;
+      }
+    }
+    &.btn--active {
+      border-bottom: 2px solid vars.$caption-label-text;
+      &:before {
+        background-color: vars.$caption-label-text;
+      }
+      .discover__nav-btn__name {
+        color: vars.$text-color;
+      }
+      .discover__nav-btn__quantity {
+        background-color: vars.$caption-label-text;
+      }
+    }
+    &__name, &__quantity {
+      position: relative;
+      z-index: 2;
+    }
+    &__name {
+      color: vars.$caption-label-text;
+      line-height: 140%;
+      font-weight: 600;
+    }
+    &__quantity {
+      border-radius: 20px;
+      padding: 5px 10px;
+      background-color: vars.$background-secondary;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint768) {
+  .discover__nav {
+    &-btn {
+      &__name {
+        font-size: 16px;
+      }
+      &__quantity {
+        font-size: 12px;
+        line-height: 110%;
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .discover__nav-btn__quantity {
+    display: none;
+  }
+}

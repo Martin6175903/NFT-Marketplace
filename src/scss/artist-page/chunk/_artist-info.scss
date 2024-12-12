@@ -1,0 +1,159 @@
+@use "../../block/vars";
+
+.artist {
+  padding: 0;
+  &__box {
+    max-width: 1280px;
+    margin: 0 auto;
+    border-bottom: 1px solid vars.$background-secondary;
+    &-bg {
+      background: url("../../../img/artist-page/artist-bg.jpg") center center no-repeat;
+      height: 320px;
+    }
+  }
+  &__info {
+    margin-top: 50px;
+    position: relative;
+    padding: 40px 0;
+  }
+  .info {
+    &__avatar {
+      position: absolute;
+      top: -120px;
+      left: 0;
+      border: 2px solid vars.$background;
+      border-radius: 20px;
+    }
+    &__box {
+      display: flex;
+      justify-content: space-between;
+      &-inner {
+        display: flex;
+        gap: 20px;
+      }
+      &-btn {
+        border-radius: 20px;
+        padding: 19px 0;
+        font-weight: 600;
+        font-family: vars.$fontWorkSans;
+        height: 60px;
+        cursor: pointer;
+        &__text {
+          padding-left: 32px;
+          position: relative;
+          &:before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            @include vars.pos-absolute(top, left, 50%, 0, 0, -50%);
+          }
+        }
+      }
+      &-content:first-child .info__box-btn {
+        background-color: vars.$call-to-action;
+        width: 186px;
+        &:hover {
+          transition: all .3s;
+          background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+        }
+        &__text {
+          background: url("../../../img/artist-page/copy-icon.svg") no-repeat;
+        }
+      }
+      &-content:last-child .info__box-btn {
+        border: 2px solid vars.$call-to-action;
+        width: 145px;
+        &:hover {
+          transition: all .3s;
+          background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+          color: vars.$hover-color-trans-bg;
+        }
+        &__text {
+          background: url("../../../img/artist-page/plus-icon.svg") no-repeat;
+        }
+      }
+    }
+    &__stats {
+      margin: 30px 0;
+      display: flex;
+      gap: 20px;
+      &-box {
+        flex-basis: 156px;
+      }
+    }
+    &__title {
+      font-weight: 700;
+      font-family: vars.$fontMain;
+      color: vars.$caption-label-text;
+    }
+    &__subtitle {
+      margin: 10px 0 30px;
+    }
+    &__links-title {
+      font-weight: 700;
+      font-family: vars.$fontMain;
+      color: vars.$caption-label-text;
+    }
+    &__links {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint768) {
+  .artist {
+    .info {
+      &__box {
+        flex-direction: column;
+        gap: 30px;
+        &-name {
+          @include vars.font-conf(38, 120%, 600);
+        }
+      }
+      &__stats {
+        &-num {
+          @include vars.font-conf(22, 160%, 700);
+        }
+        &-name {
+          @include vars.font-conf(16, 140%);
+        }
+      }
+      &__title, &__subtitle, &__links-title {
+        @include vars.font-conf(16, 140%);
+      }
+      &__subtitle {
+        text-transform: none;
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .artist {
+    .info {
+      &__avatar {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &__box {
+        &-name {
+          @include vars.font-conf(28, 140%, 600);
+        }
+      }
+      &__box-inner {
+        flex-direction: column;
+      }
+      &__box-btn {
+        width: 100% !important;
+      }
+      &__stats {
+        justify-content: space-evenly;
+        &-box {
+          flex-basis: auto;
+        }
+      }
+    }
+  }
+}

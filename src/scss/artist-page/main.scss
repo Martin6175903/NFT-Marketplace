@@ -3,5 +3,7 @@
 @use "../block/fonts";
 @use "../block/global";
 @use "../block/header";
-//@use "./chunk/connect-wallet";
+@use "./chunk/artist-info";
+@use "chunk/discover-nav";
+@use "chunk/discover-collection";
 @use "../block/footer";
