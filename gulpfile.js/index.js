@@ -12,9 +12,9 @@ global.$ = {
 }
 
 // Tasks
-const {index: html, signupHTML, walletHTML, artistHTML } = require("./task/html");
-const {index: scss, signupSCSS, walletSCSS, artistSCSS } = require("./task/scss");
-const {index: js, signupJS, walletJS, artistJS } = require("./task/js");
+const {index: html, signupHTML, walletHTML, artistHTML, nftHTML } = require("./task/html");
+const {index: scss, signupSCSS, walletSCSS, artistSCSS, nftSCSS } = require("./task/scss");
+const {index: js, signupJS, walletJS, artistJS, nftJS } = require("./task/js");
 const fonts = require("./task/fonts");
 const img = require("./task/img");
 const server = require("./task/server");
@@ -33,6 +33,9 @@ const watcher = () => {
     $.gulp.watch($.pathFile.html.artist.watch, artistHTML).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.scss.artist.watch, artistSCSS).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.js.artist.watch, artistJS).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.html.nft.watch, nftHTML).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.scss.nft.watch, nftSCSS).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.js.nft.watch, nftJS).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.img.watch, img).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.fonts.watch, fonts).on("all", $.browserSync.reload);
 }
@@ -40,7 +43,7 @@ const watcher = () => {
 // Build
 const build = $.gulp.series(
     clear,
-    $.gulp.parallel(html, signupHTML, walletHTML, artistHTML, scss, signupSCSS, artistSCSS, walletSCSS, js, signupJS, walletJS, artistJS, img, fonts)
+    $.gulp.parallel(html, signupHTML, walletHTML, artistHTML, nftHTML, scss, signupSCSS, artistSCSS, walletSCSS, nftSCSS, js, signupJS, walletJS, artistJS, nftJS, img, fonts)
 );
 
 // Dev

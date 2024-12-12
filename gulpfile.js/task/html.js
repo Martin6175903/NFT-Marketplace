@@ -47,6 +47,18 @@ const html = {
             .pipe($.gp.htmlmin($.appFile.htmlmin))
             .pipe($.gp.size({title: "После сжатия"}))
             .pipe($.gulp.dest($.pathFile.html.artist.dest));
+    },
+    async nftHTML() {
+        await $.gulp.src($.pathFile.html.nft.src)
+            .pipe($.gp.plumber({
+                errorHandler: $.gp.notify.onError()
+            }))
+            .pipe($.gp.rename({ basename: "nft" }))
+            .pipe($.gp.fileInclude())
+            .pipe($.gp.size({ title: "До сжатия" }))
+            .pipe($.gp.htmlmin($.appFile.htmlmin))
+            .pipe($.gp.size({title: "После сжатия"}))
+            .pipe($.gulp.dest($.pathFile.html.nft.dest));
     }
 }
 

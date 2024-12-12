@@ -47,6 +47,18 @@ const js = {
             }))
             .pipe($.gp.rename({ basename: "artist" }))
             .pipe($.gulp.dest($.pathFile.js.artist.dest));
+    },
+    async nftJS() {
+        await $.gulp.src($.pathFile.js.nft.src)
+            .pipe($.gp.plumber({
+                errorHandler: $.gp.notify.onError()
+            }))
+            .pipe($.gp.babel())
+            .pipe($.webpack({
+                mode: $.appFile.isDev ? "development" : "production"
+            }))
+            .pipe($.gp.rename({ basename: "nft" }))
+            .pipe($.gulp.dest($.pathFile.js.nft.dest));
     }
 }
 

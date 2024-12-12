@@ -38,6 +38,7 @@
     &__text {
       &:before {
         background: url("../../img/user-icon.svg") center center no-repeat;
+        bottom: initial;
       }
     }
   }

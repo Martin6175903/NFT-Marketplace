@@ -1,0 +1,129 @@
+@use "../../block/vars";
+
+.nft {
+  &__box {
+    max-width: 1280px;
+    margin: 0 auto;
+    &-bg {
+      height: 560px;
+      background: url("../../../img/nft-page/nft-page-bg.jpg") no-repeat;
+    }
+  }
+  &__info {
+    position: relative;
+    padding: 40px 0;
+  }
+  .info {
+    &__title {
+      font-weight: 600;
+    }
+    &__subtitle {
+      color: vars.$caption-label-text;
+      margin: 10px 0 30px;
+    }
+    &__wrapper {
+      position: absolute;
+      right: 0;
+      top: 40px;
+      width: 295px;
+      height: 237px;
+      border-radius: 20px;
+      padding: 30px;
+      background: vars.$background-secondary;
+    }
+    &__time {
+      margin: 10px 0 5px;
+      display: flex;
+      gap: 10px;
+      font-family: vars.$fontMain;
+      &>span {
+        font-family: vars.$fontMain;
+      }
+    }
+    &__box {
+      padding-top: 5px;
+      flex-direction: column;
+      @include vars.flex-conf(def, center, 5);
+    }
+    &__box-btn {
+      margin-top: 30px;
+      max-width: 325px;
+    }
+    &__create-text {
+      font-weight: 700;
+      font-family: vars.$fontMain;
+      color: vars.$caption-label-text;
+    }
+    &__create-name {
+      font-weight: 600;
+      line-height: 140%;
+      padding-left: 36px;
+      position: relative;
+      margin: 10px 0 30px;
+      &:before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        @include vars.pos-absolute(top, left, 50%, 0, 0, -50%);
+        background: url("../../../img/nft-page/orbitians/user-avatar.png") no-repeat;
+      }
+    }
+    &__description-title {
+      font-weight: 700;
+      font-family: vars.$fontMain;
+      color: vars.$caption-label-text;
+    }
+    &__description-text {
+      max-width: 605px;
+      margin: 10px 0 30px;
+      text-transform: none;
+    }
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+    &__title {
+      font-weight: 700;
+      font-family: vars.$fontMain;
+      color: vars.$caption-label-text;
+    }
+    &__link {
+      display: inline-block;
+      padding-left: 42px;
+      position: relative;
+      text-transform: none;
+      &:before {
+        content: "";
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url("../../../img/social-global.svg") no-repeat;
+      }
+    }
+  }
+  .tags {
+    &__title {
+      font-weight: 600;
+      color: vars.$caption-label-text;
+      line-height: 140%;
+      margin-bottom: 20px;
+    }
+    &__items {
+      display: flex;
+      gap: 20px;
+    }
+    &__item {
+      padding: 12px 30px;
+      border-radius: 20px;
+      background-color: vars.$background-secondary;
+      text-transform: uppercase;
+      font-family: vars.$fontWorkSans;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}

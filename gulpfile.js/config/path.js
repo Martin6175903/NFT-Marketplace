@@ -27,6 +27,11 @@ module.exports = {
             src: pathSrc + "/html/artist-page/*.html",
             watch: pathSrc + "/html/artist-page/**/*.html",
             dest: pathDest + "/html"
+        },
+        nft: {
+            src: pathSrc + "/html/nft-page/*.html",
+            watch: pathSrc + "/html/nft-page/**/*.html",
+            dest: pathDest + "/html"
         }
     },
 
@@ -59,6 +64,11 @@ module.exports = {
             src: pathSrc + "/scss/artist-page/*.{sass,scss}",
             watch: pathSrc + "/scss/artist-page/**/*.{sass,scss}",
             dest: pathDest + "/css"
+        },
+        nft: {
+            src: pathSrc + "/scss/nft-page/*.{sass,scss}",
+            watch: pathSrc + "/scss/nft-page/**/*.{sass,scss}",
+            dest: pathDest + "/css"
         }
     },
 
@@ -81,6 +91,11 @@ module.exports = {
         artist: {
             src: pathSrc + "/js/artist-page/*.js",
             watch: pathSrc + "/js/artist-page/**/*.js",
+            dest: pathDest + "/js"
+        },
+        nft: {
+            src: pathSrc + "/js/nft-page/*.js",
+            watch: pathSrc + "/js/nft-page/**/*.js",
             dest: pathDest + "/js"
         }
     },
