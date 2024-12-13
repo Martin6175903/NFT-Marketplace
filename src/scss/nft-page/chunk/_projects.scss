@@ -1,0 +1,101 @@
+@use "../../block/vars";
+
+.projects {
+  &__inner {
+    @include vars.flex-conf(space-between, center, 15, wrap);
+    margin-bottom: 60px;
+    &-link {
+      max-width: 267px;
+      .btn__text {
+        &:before {
+          background: url("../../../img/nft-page/arrow-right-icon.svg") no-repeat;
+        }
+      }
+    }
+  }
+  &__items {
+    @include vars.flex-conf(center, def, 30, wrap);
+  }
+  &__wrapper {
+    max-height: 173px;
+    padding: 20px 30px 25px 30px;
+    border-radius: 0 0 20px 20px;
+    background-color: vars.$background-secondary;
+  }
+  &__item {
+    flex-basis: 330px;
+    display: flex;
+    flex-direction: column;
+    & .item-name {
+      margin: 5px 0 25px;
+    }
+    .item-name {
+      &:before {
+        background: url("../../../img/nft-page/orbitians/user-avatar.png") no-repeat;
+      }
+    }
+    &-name {
+      font-weight: 600;
+    }
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__item-box {
+    &__text {
+      color: vars.$caption-label-text;
+      margin-bottom: 8px;
+    }
+    &:last-child {
+      text-align: right;
+    }
+  }
+  &__link-bottom {
+    margin-top: 30px;
+    display: none;
+    text-align: center;
+    & span {
+      display: inline-block;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint768) {
+  .projects {
+    &__inner {
+      margin-bottom: 30px;
+      &-title {
+        @include vars.font-conf(24, 140%);
+      }
+    }
+    &__item:nth-child(n + 7) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .projects {
+    padding-bottom: 60px;
+    &__inner {
+      justify-content: center;
+      &-link {
+        display: none;
+      }
+    }
+    &__item:nth-child(n + 4) {
+      display: none;
+    }
+    &__item-bg {
+      width: 100%;
+    }
+    &__wrapper {
+      padding: 20px 20px 25px 20px;
+    }
+    &__link-bottom {
+      display: block;
+      max-width: none;
+    }
+  }
+}

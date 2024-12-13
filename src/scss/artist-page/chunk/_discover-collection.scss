@@ -45,9 +45,20 @@
   }
 }
 
+@media (max-width: vars.$breakpoint768) {
+  .discover {
+    &__item:nth-child(n + 7) {
+      display: none;
+    }
+  }
+}
+
 @media (max-width: vars.$breakpoint480) {
   .discover {
     padding-bottom: 60px;
+    &__item:nth-child(n + 4) {
+      display: none;
+    }
     &__item-bg {
       width: 100%;
     }

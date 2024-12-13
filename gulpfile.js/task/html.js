@@ -59,6 +59,30 @@ const html = {
             .pipe($.gp.htmlmin($.appFile.htmlmin))
             .pipe($.gp.size({title: "После сжатия"}))
             .pipe($.gulp.dest($.pathFile.html.nft.dest));
+    },
+    async marketplaceHTML() {
+        await $.gulp.src($.pathFile.html.marketplace.src)
+            .pipe($.gp.plumber({
+                errorHandler: $.gp.notify.onError()
+            }))
+            .pipe($.gp.rename({ basename: "marketplace" }))
+            .pipe($.gp.fileInclude())
+            .pipe($.gp.size({ title: "До сжатия" }))
+            .pipe($.gp.htmlmin($.appFile.htmlmin))
+            .pipe($.gp.size({title: "После сжатия"}))
+            .pipe($.gulp.dest($.pathFile.html.marketplace.dest));
+    },
+    async rankingsHTML() {
+        await $.gulp.src($.pathFile.html.rankings.src)
+            .pipe($.gp.plumber({
+                errorHandler: $.gp.notify.onError()
+            }))
+            .pipe($.gp.rename({ basename: "rankings" }))
+            .pipe($.gp.fileInclude())
+            .pipe($.gp.size({ title: "До сжатия" }))
+            .pipe($.gp.htmlmin($.appFile.htmlmin))
+            .pipe($.gp.size({title: "После сжатия"}))
+            .pipe($.gulp.dest($.pathFile.html.rankings.dest));
     }
 }
 

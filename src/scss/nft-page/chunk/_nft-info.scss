@@ -6,7 +6,8 @@
     margin: 0 auto;
     &-bg {
       height: 560px;
-      background: url("../../../img/nft-page/nft-page-bg.jpg") no-repeat;
+      background: url("../../../img/nft-page/nft-page-bg.jpg") center center no-repeat;
+      background-size: cover;
     }
   }
   &__info {
@@ -30,6 +31,7 @@
       border-radius: 20px;
       padding: 30px;
       background: vars.$background-secondary;
+      z-index: 10;
     }
     &__time {
       margin: 10px 0 5px;
@@ -115,6 +117,7 @@
     &__items {
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
     }
     &__item {
       padding: 12px 30px;
@@ -125,5 +128,33 @@
       font-weight: 600;
       cursor: pointer;
     }
+  }
+}
+
+@media (max-width: vars.$breakpoint768) {
+  .nft {
+    .info {
+      &__title {
+        @include vars.font-conf(28, 140%, 600);
+      }
+      &__subtitle, &__create-text, &__create-name, &__description-title, &__description-text, .tags__title {
+        @include vars.font-conf(16, 140%, 400);
+      }
+      &__wrapper {
+        position: static;
+        margin-bottom: 20px;
+      }
+    }
+    .details .details__title, .details .details__link {
+      @include vars.font-conf(16, 140%, 400);
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .nft .info__wrapper {
+    width: auto;
+    height: auto;
+    padding: 15px;
   }
 }

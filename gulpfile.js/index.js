@@ -12,9 +12,9 @@ global.$ = {
 }
 
 // Tasks
-const {index: html, signupHTML, walletHTML, artistHTML, nftHTML } = require("./task/html");
-const {index: scss, signupSCSS, walletSCSS, artistSCSS, nftSCSS } = require("./task/scss");
-const {index: js, signupJS, walletJS, artistJS, nftJS } = require("./task/js");
+const {index: html, signupHTML, walletHTML, artistHTML, nftHTML, marketplaceHTML, rankingsHTML } = require("./task/html");
+const {index: scss, signupSCSS, walletSCSS, artistSCSS, nftSCSS, marketplaceSCSS, rankingsSCSS } = require("./task/scss");
+const {index: js, signupJS, walletJS, artistJS, nftJS, marketplaceJS, rankingsJS } = require("./task/js");
 const fonts = require("./task/fonts");
 const img = require("./task/img");
 const server = require("./task/server");
@@ -36,6 +36,12 @@ const watcher = () => {
     $.gulp.watch($.pathFile.html.nft.watch, nftHTML).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.scss.nft.watch, nftSCSS).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.js.nft.watch, nftJS).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.html.marketplace.watch, marketplaceHTML).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.scss.marketplace.watch, marketplaceSCSS).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.js.marketplace.watch, marketplaceJS).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.html.rankings.watch, rankingsHTML).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.scss.rankings.watch, rankingsSCSS).on("all", $.browserSync.reload);
+    $.gulp.watch($.pathFile.js.rankings.watch, rankingsJS).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.img.watch, img).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.fonts.watch, fonts).on("all", $.browserSync.reload);
 }
@@ -43,7 +49,7 @@ const watcher = () => {
 // Build
 const build = $.gulp.series(
     clear,
-    $.gulp.parallel(html, signupHTML, walletHTML, artistHTML, nftHTML, scss, signupSCSS, artistSCSS, walletSCSS, nftSCSS, js, signupJS, walletJS, artistJS, nftJS, img, fonts)
+    $.gulp.parallel(html, signupHTML, walletHTML, artistHTML, nftHTML, marketplaceHTML, rankingsHTML, scss, signupSCSS, artistSCSS, walletSCSS, nftSCSS, marketplaceSCSS, rankingsSCSS, js, signupJS, walletJS, artistJS, nftJS, marketplaceJS, rankingsJS, img, fonts)
 );
 
 // Dev

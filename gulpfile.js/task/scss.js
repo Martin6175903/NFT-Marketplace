@@ -89,6 +89,42 @@ const scss = {
             .pipe($.gp.if($.appFile.isProd, $.gp.csso()))
             .pipe($.gp.if($.appFile.isProd, $.gp.size({ title: "signup.min.css"} )))
             .pipe($.gulp.dest($.pathFile.scss.nft.dest));
+    },
+    async marketplaceSCSS() {
+        await $.gulp.src($.pathFile.scss.marketplace.src, { sourcemaps: $.appFile.isDev})
+            .pipe($.gp.plumber({
+                errorHandler: $.gp.notify.onError()
+            }))
+            .pipe($.gp.rename({ basename: "marketplace" }))
+            .pipe($.gp.sassGlob())
+            .pipe($.sass())
+            .pipe($.gp.autoprefixer())
+            .pipe($.gp.shorthand())
+            .pipe($.gp.groupCssMediaQueries())
+            .pipe($.gp.size({ title: "signup.css"} ))
+            .pipe($.gulp.dest($.pathFile.scss.marketplace.dest, { sourcemaps: $.appFile.isDev }))
+            .pipe($.gp.if($.appFile.isProd, $.gp.rename({ suffix: ".min"})))
+            .pipe($.gp.if($.appFile.isProd, $.gp.csso()))
+            .pipe($.gp.if($.appFile.isProd, $.gp.size({ title: "signup.min.css"} )))
+            .pipe($.gulp.dest($.pathFile.scss.marketplace.dest));
+    },
+    async rankingsSCSS() {
+        await $.gulp.src($.pathFile.scss.rankings.src, { sourcemaps: $.appFile.isDev})
+            .pipe($.gp.plumber({
+                errorHandler: $.gp.notify.onError()
+            }))
+            .pipe($.gp.rename({ basename: "rankings" }))
+            .pipe($.gp.sassGlob())
+            .pipe($.sass())
+            .pipe($.gp.autoprefixer())
+            .pipe($.gp.shorthand())
+            .pipe($.gp.groupCssMediaQueries())
+            .pipe($.gp.size({ title: "signup.css"} ))
+            .pipe($.gulp.dest($.pathFile.scss.rankings.dest, { sourcemaps: $.appFile.isDev }))
+            .pipe($.gp.if($.appFile.isProd, $.gp.rename({ suffix: ".min"})))
+            .pipe($.gp.if($.appFile.isProd, $.gp.csso()))
+            .pipe($.gp.if($.appFile.isProd, $.gp.size({ title: "signup.min.css"} )))
+            .pipe($.gulp.dest($.pathFile.scss.rankings.dest));
     }
 }
 

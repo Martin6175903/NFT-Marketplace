@@ -32,6 +32,16 @@ module.exports = {
             src: pathSrc + "/html/nft-page/*.html",
             watch: pathSrc + "/html/nft-page/**/*.html",
             dest: pathDest + "/html"
+        },
+        marketplace: {
+            src: pathSrc + "/html/marketplace/*.html",
+            watch: pathSrc + "/html/marketplace/**/*.html",
+            dest: pathDest + "/html"
+        },
+        rankings: {
+            src: pathSrc + "/html/rankings/*.html",
+            watch: pathSrc + "/html/rankings/**/*.html",
+            dest: pathDest + "/html"
         }
     },
 
@@ -69,6 +79,16 @@ module.exports = {
             src: pathSrc + "/scss/nft-page/*.{sass,scss}",
             watch: pathSrc + "/scss/nft-page/**/*.{sass,scss}",
             dest: pathDest + "/css"
+        },
+        marketplace: {
+            src: pathSrc + "/scss/marketplace/*.{sass,scss}",
+            watch: pathSrc + "/scss/marketplace/**/*.{sass,scss}",
+            dest: pathDest + "/css"
+        },
+        rankings: {
+            src: pathSrc + "/scss/rankings/*.{sass,scss}",
+            watch: pathSrc + "/scss/rankings/**/*.{sass,scss}",
+            dest: pathDest + "/css"
         }
     },
 
@@ -96,6 +116,16 @@ module.exports = {
         nft: {
             src: pathSrc + "/js/nft-page/*.js",
             watch: pathSrc + "/js/nft-page/**/*.js",
+            dest: pathDest + "/js"
+        },
+        marketplace: {
+            src: pathSrc + "/js/marketplace/*.js",
+            watch: pathSrc + "/js/marketplace/**/*.js",
+            dest: pathDest + "/js"
+        },
+        rankings: {
+            src: pathSrc + "/js/rankings/*.js",
+            watch: pathSrc + "/js/rankings/**/*.js",
             dest: pathDest + "/js"
         }
     },

@@ -59,6 +59,30 @@ const js = {
             }))
             .pipe($.gp.rename({ basename: "nft" }))
             .pipe($.gulp.dest($.pathFile.js.nft.dest));
+    },
+    async marketplaceJS() {
+        await $.gulp.src($.pathFile.js.marketplace.src)
+            .pipe($.gp.plumber({
+                errorHandler: $.gp.notify.onError()
+            }))
+            .pipe($.gp.babel())
+            .pipe($.webpack({
+                mode: $.appFile.isDev ? "development" : "production"
+            }))
+            .pipe($.gp.rename({ basename: "marketplace" }))
+            .pipe($.gulp.dest($.pathFile.js.marketplace.dest));
+    },
+    async rankingsJS() {
+        await $.gulp.src($.pathFile.js.rankings.src)
+            .pipe($.gp.plumber({
+                errorHandler: $.gp.notify.onError()
+            }))
+            .pipe($.gp.babel())
+            .pipe($.webpack({
+                mode: $.appFile.isDev ? "development" : "production"
+            }))
+            .pipe($.gp.rename({ basename: "rankings" }))
+            .pipe($.gulp.dest($.pathFile.js.rankings.dest));
     }
 }
 
