@@ -1,0 +1,154 @@
+@use "../../block/vars";
+
+.discover__collection {
+  background-color: vars.$background-secondary;
+  border-bottom: 2px solid vars.$background;
+  .discover {
+    &__items {
+      @include vars.flex-conf(center, def, 30, wrap);
+    }
+    &__wrapper {
+      max-height: 173px;
+      padding: 20px 30px 25px 30px;
+      border-radius: 0 0 20px 20px;
+      background-color: vars.$background;
+    }
+    &__item {
+      flex-basis: 330px;
+      display: flex;
+      flex-direction: column;
+      & .item-name {
+        margin: 5px 0 25px;
+      }
+      &:nth-child(1) {
+        .item-name {
+          &:before {
+            background: url("../../../img/marketplace/marketplace-user-avatar-1.png");
+          }
+        }
+      }
+      &:nth-child(2) {
+        .item-name {
+          &:before {
+            background: url("../../../img/marketplace/marketplace-user-avatar-2.png");
+          }
+        }
+      }
+      &:nth-child(3) {
+        .item-name {
+          &:before {
+            background: url("../../../img/marketplace/marketplace-user-avatar-3.png");
+          }
+        }
+      }
+      &:nth-child(4) {
+        .item-name {
+          &:before {
+            background: url("../../../img/marketplace/marketplace-user-avatar-4.png");
+          }
+        }
+      }
+      &:nth-child(5) {
+        .item-name {
+          &:before {
+            background: url("../../../img/marketplace/marketplace-user-avatar-5.png");
+          }
+        }
+      }
+      &:nth-child(6) {
+        .item-name {
+          &:before {
+            background: url("../../../img/marketplace/marketplace-user-avatar-6.png");
+          }
+        }
+      }
+      &:nth-child(7) {
+        .item-name {
+          &:before {
+            background: url("../../../img/marketplace/marketplace-user-avatar-7.png");
+          }
+        }
+      }
+      &:nth-child(8) {
+        .item-name {
+          &:before {
+            background: url("../../../img/marketplace/marketplace-user-avatar-8.png");
+          }
+        }
+      }
+      &:nth-child(9) {
+        .item-name {
+          &:before {
+            background: url("../../../img/marketplace/marketplace-user-avatar-9.png");
+          }
+        }
+      }
+      &:nth-child(10) {
+        .item-name {
+          &:before {
+            background: url("../../../img/marketplace/marketplace-user-avatar-10.png");
+          }
+        }
+      }
+      &:nth-child(11) {
+        .item-name {
+          &:before {
+            background: url("../../../img/marketplace/marketplace-user-avatar-11.png");
+          }
+        }
+      }
+      &:nth-child(12) {
+        .item-name {
+          &:before {
+            background: url("../../../img/marketplace/marketplace-user-avatar-12.png");
+          }
+        }
+      }
+      &-name {
+        font-weight: 600;
+      }
+      &-inner {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    &__item-box {
+      &__text {
+        color: vars.$caption-label-text;
+        margin-bottom: 8px;
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint768) {
+  .discover {
+    &__item:nth-child(n + 9) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .discover {
+    padding-bottom: 60px;
+    &__wrapper {
+      padding: 15px !important;
+    }
+    &__item-name {
+      font-size: 18px;
+    }
+    &__item:nth-child(n + 6) {
+      display: none;
+    }
+    &__item-bg {
+      width: 100%;
+    }
+    &__wrapper {
+      padding: 20px 20px 25px 20px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use "../../block/vars";
+
+.stats {
+  padding: 40px 0;
+  &__table {
+    &-row {
+      border-radius: 20px;
+      &:not(:first-child) {
+        background-color: vars.$background-secondary;
+        height: 84px;
+        padding: 12px 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@use "../../block/vars";
+
+.title-page {
+  &__title {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: vars.$breakpoint768) {
+  .title-page {
+    &__title {
+      font-size: 38px;
+      line-height: 120%;
+    }
+    &__subtitle {
+      font-size: 16px;
+      line-height: 140%;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint480) {
+  .title-page {
+    &__title {
+      font-size: 28px;
+      line-height: 140%;
+    }
+  }
+}

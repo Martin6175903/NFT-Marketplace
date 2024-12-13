@@ -43,6 +43,7 @@
     }
   }
   &__burger {
+    z-index: 30;
     display: none;
     position: relative;
     width: 40px;
@@ -123,6 +124,7 @@
       display: block;
     }
     .nav {
+      z-index: 25;
       display: block;
       position: absolute;
       right: -600px;
