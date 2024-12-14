@@ -30,12 +30,6 @@ const watcher = () => {
     $.gulp.watch($.pathFile.html.wallet.watch, walletHTML).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.scss.wallet.watch, walletSCSS).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.js.wallet.watch, walletJS).on("all", $.browserSync.reload);
-    $.gulp.watch($.pathFile.html.artist.watch, artistHTML).on("all", $.browserSync.reload);
-    $.gulp.watch($.pathFile.scss.artist.watch, artistSCSS).on("all", $.browserSync.reload);
-    $.gulp.watch($.pathFile.js.artist.watch, artistJS).on("all", $.browserSync.reload);
-    $.gulp.watch($.pathFile.html.nft.watch, nftHTML).on("all", $.browserSync.reload);
-    $.gulp.watch($.pathFile.scss.nft.watch, nftSCSS).on("all", $.browserSync.reload);
-    $.gulp.watch($.pathFile.js.nft.watch, nftJS).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.html.marketplace.watch, marketplaceHTML).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.scss.marketplace.watch, marketplaceSCSS).on("all", $.browserSync.reload);
     $.gulp.watch($.pathFile.js.marketplace.watch, marketplaceJS).on("all", $.browserSync.reload);
@@ -49,7 +43,7 @@ const watcher = () => {
 // Build
 const build = $.gulp.series(
     clear,
-    $.gulp.parallel(html, signupHTML, walletHTML, artistHTML, nftHTML, marketplaceHTML, rankingsHTML, scss, signupSCSS, artistSCSS, walletSCSS, nftSCSS, marketplaceSCSS, rankingsSCSS, js, signupJS, walletJS, artistJS, nftJS, marketplaceJS, rankingsJS, img, fonts)
+    $.gulp.parallel(html, signupHTML, walletHTML, marketplaceHTML, rankingsHTML, scss, signupSCSS, walletSCSS, marketplaceSCSS, rankingsSCSS, js, signupJS, walletJS, marketplaceJS, rankingsJS, img, fonts)
 );
 
 // Dev

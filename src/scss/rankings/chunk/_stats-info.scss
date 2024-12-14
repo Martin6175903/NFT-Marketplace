@@ -1,15 +1,149 @@
 @use "../../block/vars";
 
 .stats {
-  padding: 40px 0;
   &__table {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
     &-row {
+      padding: 12px 20px;
       border-radius: 20px;
+      display: grid;
+      grid-template-columns: 1fr 13fr repeat(3, 5fr);
+      gap: 20px;
+      justify-content: flex-start;
+      align-items: center;
+      &:first-child {
+        color: vars.$caption-label-text;
+        height: 46px;
+        .stats__table-column {
+          &:first-child {
+            padding: 0 10px !important;
+          }
+        }
+      }
       &:not(:first-child) {
-        background-color: vars.$background-secondary;
+        .stats__table-column {
+          &:first-child {
+            background-color: vars.$background;
+            border-radius: 20px;
+            color: vars.$caption-label-text;
+          }
+          &:nth-child(2) {
+            font-family: vars.$fontWorkSans;
+            @include vars.font-conf(22, 160%);
+            text-transform: capitalize;
+            font-weight: 600;
+            padding-left: 80px;
+            position: relative;
+            &:before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 60px;
+              height: 60px;
+            }
+          }
+          &:nth-child(3) {
+            color: #00ac4f;
+          }
+        }
+      }
+      @for $i from 2 through 21 {
+        &:nth-child(#{$i}) {
+          .stats__table-column:nth-child(2) {
+            &:before {
+              background: url("../../../img/rankings/rankings-icon-avatar-#{$i - 1}.png") no-repeat;
+              background-size: cover;
+            }
+          }
+        }
+      }
+      &:nth-child(n-10) {
+        .stats__table-column:first-child {
+          &:first-child {
+            padding: 4px 10px;
+          }
+        }
+      }
+      &:nth-child(n+11) {
+        .stats__table-column:first-child {
+          &:first-child {
+            padding: 4px 5px;
+          }
+        }
+      }
+      .stats__table-column {
+        &:first-child {
+          display: grid;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      &:first-child {
+        background-color: vars.$background;
+        border: 1px solid  vars.$background-secondary;
+      }
+      &:not(:first-child) {
         height: 84px;
-        padding: 12px 20px;
+        background-color: vars.$background-secondary;
       }
     }
   }
 }
+
+@media (max-width: vars.$breakpoint850) {
+  .stats {
+    &__table {
+      &-row {
+        grid-template-columns: 1fr 13fr repeat(2, 4fr);
+        &:not(:first-child) {
+          height: 60px;
+          .stats__table-column{
+            &:nth-child(2) {
+              padding-left: 36px;
+              &:before {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
+        }
+        .stats__table-column:nth-child(4) {
+          display: none;
+        }
+      }
+      &-column {
+        &:first-child {
+          padding: 0 !important;
+          background: transparent !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint600) {
+  .stats {
+    &__table {
+      &-row {
+        grid-template-columns: 1fr 5fr 2fr;
+        gap: 10px;
+        padding: 12px 5px;
+        .stats__table-column:nth-child(3) {
+          display: none;
+        }
+        &:not(:first-child) {
+          .stats__table-column {
+            &:first-child, &:nth-child(2), &:nth-child(5) {
+              @include vars.font-conf(12, 110%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
