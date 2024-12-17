@@ -1,4 +1,4 @@
-import burgerOpen from "./burgerMenu/burgerMenu";
+import burgerOpen from "../chunk/burgerMenu";
 import {formElemsClick, formSubmit} from "./formProccesing/formProccesing";
 
 document.querySelector(".header__burger").onclick = burgerOpen;

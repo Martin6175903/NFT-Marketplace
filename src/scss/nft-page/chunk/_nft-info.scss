@@ -6,7 +6,7 @@
     margin: 0 auto;
     &-bg {
       height: 560px;
-      background: url("../../../img/nft-page/nft-page-bg.jpg") center center no-repeat;
+      background: url("../../../img/nft-page/nft-bg.jpg") center center no-repeat;
       background-size: cover;
     }
   }
@@ -62,6 +62,7 @@
       padding-left: 36px;
       position: relative;
       margin: 10px 0 30px;
+      display: inline-block;
       &:before {
         content: "";
         width: 24px;

@@ -1,14 +1,14 @@
-import { settingDate, changeDateAuction } from "../timerAuction/timerAuction";
-import changeBackground from "../changeBackground/changeBackground";
+import changeBackground from "../../chunk/changeBackground";
+import settingDate from "../../chunk/timerAuction/timerAuction";
+import changeDateAuction from "../../chunk/timerAuction/changeDateAuction";
 
 export default function() {
-    const baseSrc = "url('../../img/homepage/mashrooms/";
 
     if (!localStorage.getItem("timerAuction")) {
         localStorage.setItem("timerAuction", `${new Date()}`)
     }
 
-    changeBackground();
+    changeBackground(document.querySelector(".nft__box-bg"), "nft-page/nft", [560, 420, 320]);
 
     settingDate();
 
